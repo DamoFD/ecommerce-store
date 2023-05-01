@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button, button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-rale {
+  font-family: "Raleway", sans-serif;
+}
+
+.font-mont {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.color-primary {
+  color: #b108bd;
+}
+
+.color-primary-bg {
+  background: #b108bd;
+}
+
+.color-secondary {
+  color: #0ea8cf;
+}
+
+.color-secondary-bg {
+  background: #0ea8cf;
+}
+
+.color-yellow {
+  color: #afcf0e;
+}
+
+.color-yellow-bg {
+  background: #afcf0e;
+}
+
+/*# sourceMappingURL=style.css.map */
