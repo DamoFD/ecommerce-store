@@ -40,4 +40,37 @@ $(document).ready(function(){
         $(this).addClass("is-checked");
     });
 
+    //new phones carousel
+    $("#new-phones .owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+    //blogs owl carousel
+    $("#blogs .owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            }
+        }
+    });
+
 });
