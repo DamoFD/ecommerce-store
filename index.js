@@ -12,7 +12,7 @@ $(document).ready(function(){
         animateIn: 'fadeIn'
     });
 
-    //top sale carousel
+    //featured carousel
     $("#featured .owl-carousel").owlCarousel({
         loop: true,
         nav: true,
@@ -33,7 +33,11 @@ $(document).ready(function(){
     // isotope filter
     var $grid = $(".grid").isotope({
         itemSelector: ".grid-item",
-        layoutMode: "fitRows",
+        layoutMode: "masonry",
+        masonry: {
+            columnWidth: ".grid-item",
+            percentPosition: true
+        }
     });
 
     $(".button-group").on("click", "button", function (event) {
