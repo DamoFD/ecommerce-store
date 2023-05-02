@@ -62,11 +62,11 @@ button, button:focus {
 }
 
 .color-yellow {
-  color: #afcf0e;
+  color: #caf00c;
 }
 
 .color-yellow-bg {
-  background: #afcf0e;
+  background: #caf00c;
 }
 
 .header-img {
@@ -257,14 +257,44 @@ button, button:focus {
   right: 0;
 }
 
+#featured {
+  margin-top: 100px;
+}
+#featured h2 {
+  margin-left: 20px;
+}
+#featured .owl-carousel {
+  margin-top: 20px;
+}
+#featured .owl-carousel .item {
+  margin: 20px;
+}
+#featured .owl-carousel .item .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #featured .owl-carousel .item .product a {
   overflow: hidden;
 }
 #featured .owl-carousel .item .product img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 #featured .owl-carousel .item .product img:hover {
   transform: scale(1.1);
+}
+#featured .product-info {
+  margin-top: 20px;
+  text-align: center;
+}
+#featured .product-btn {
+  padding: 10px;
+  border: none;
+  color: white;
+  margin-top: 10px;
 }
 #featured .owl-carousel .owl-nav button {
   position: absolute;
