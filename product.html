@@ -36,18 +36,12 @@
   </head>
   <body>
     <!--start #header-->
-    <header id="header" class="color-secondary-bg">
-      <div>
-        <p class="font-roboto font-size-12">ipsum lisep</p>
-        <div class="font-roboto font-size-14">
-          <a href="#">Login</a>
-          <a href="#">Wishlist</a>
-        </div>
-      </div>
-
+    <header id="header" class="header__main">
       <!--Primary Navigation-->
       <nav class="navbar">
-        <h2 class="site-title"><a href="#" rel="home">Ecommerce Site</a></h2>
+        <a href="#" rel="home"
+          ><img src="./assets/lss-logo-white.png" class="header-img"
+        /></a>
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -64,19 +58,16 @@
             <a href="#">Category<i class="fas fa-chevron-down"></i></a>
           </li>
           <li class="nav-item"><a href="#">Coming Soon</a></li>
-          <li><i class="fas fa-search" id="search-icon"></i></li>
-          <li>
-            <input class="search-input" type="text" placeholder="Search.." />
+          <li class="nav-item nav-right"><a href="#">Login</a></li>
+          <li class="nav-item nav-right"><a href="#">Wishlist</a></li>
+          <li class="nav-item nav-right">
+            <form action="#">
+              <a href="#"
+                ><i class="fas fa-shopping-cart"><span>0</span></i></a
+              >
+            </form>
           </li>
         </ul>
-        <form action="#" class="font-size-14 font-roboto">
-          <a href="#" class="color-primary-bg">
-            <span class="font-size-16">
-              <i class="fas fa-shopping-cart"></i>
-            </span>
-            <span>0</span>
-          </a>
-        </form>
       </nav>
       <!--!Primary Navigation-->
     </header>
@@ -247,21 +238,20 @@
       </section>
       <!--!Product-->
 
-      <!--Top Sale-->
-      <section id="top-sale">
+      <!--Featured-->
+      <section id="featured">
         <div>
-          <h4 class="font-mont font-size-20">Top Sale</h4>
-          <hr />
+          <h2 class="font-mont font-size-xl color-primary">Featured</h2>
           <!--Owl Carousel-->
           <div class="owl-carousel owl-theme">
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product1.jpg" alt="product1"
+                  ><img src="./assets/products/dress-shirt.jpg" alt="product1"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Men's Shirt</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
@@ -269,9 +259,12 @@
                     <span><i class="far fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$152</span>
+                    <span class="font-size-20 color-primary">$49.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -280,11 +273,11 @@
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product2.jpg" alt="product2"
+                  ><img src="./assets/products/womens-jeans.jpg" alt="product2"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Jeans</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
@@ -292,9 +285,12 @@
                     <span><i class="fas fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$199</span>
+                    <span class="font-size-20 color-primary">$39.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -303,21 +299,76 @@
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product3.jpg" alt="product3"
+                  ><img src="./assets/products/womens-dress.jpg" alt="product3"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Dress</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
                     <span><i class="far fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$299</span>
+                    <span class="font-size-20 color-primary">$99.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="product font-roboto">
+                <a href="#"
+                  ><img src="./assets/products/mens-jeans.jpg" alt="product3"
+                /></a>
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Men's Jeans</h3>
+                  <div class="font-size-20 color-primary">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                  </div>
+                  <div>
+                    <span class="font-size-20 color-primary">$49.99</span>
+                  </div>
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="product font-roboto">
+                <a href="#"
+                  ><img src="./assets/products/womens-shoes.jpg" alt="product3"
+                /></a>
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Shoes</h3>
+                  <div class="font-size-20 color-primary">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="far fa-star"></i></span>
+                  </div>
+                  <div>
+                    <span class="font-size-20 color-primary">$89.99</span>
+                  </div>
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -327,58 +378,60 @@
           <!--!Owl Carousel-->
         </div>
       </section>
-      <!--!Top Sale-->
+      <!--!Featured-->
     </main>
     <!--!start #main-->
 
     <!--start #footer-->
-    <footer id="footer">
-      <div>
+    <footer class="color-primary-bg" id="footer">
+      <div class="footer-container">
         <div class="row">
           <div class="col">
-            <h4 class="font-mont font-size-20">Ecommerce Site</h4>
-            <p class="font-size-14 font-roboto">
+            <h2 class="font-mont font-size-lg">Luxe Style Society</h2>
+            <p class="font-size-20 font-roboto">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
               dolore, possimus suscipit sed aliquid dolores consequuntur
               inventore totam ex saepe.
             </p>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Newsletter</h4>
+            <h4 class="font-mont font-size-lg">Newsletter</h4>
             <form>
               <div class="col">
-                <input type="text" placeholder="Email" />
+                <input class="font-size-20" type="text" placeholder="Email" />
               </div>
-              <div class="col">
-                <button type="submit">Subscribe</button>
-              </div>
+                <button class="color-primary font-size-20" type="submit">Subscribe</button>
             </form>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Information</h4>
-            <div>
-              <a href="#" class="font-roboto font-size-14">About Us</a>
-              <a href="#" class="font-roboto font-size-14"
+            <h4 class="font-mont font-size-lg">Information</h4>
+            <nav>
+              <ul>
+              <li><a href="#" class="font-roboto font-size-20">About Us</a></li>
+              <li><a href="#" class="font-roboto font-size-20"
                 >Delivery Information</a
-              >
-              <a href="#" class="font-roboto font-size-14">Privacy Policy</a>
-              <a href="#" class="font-roboto font-size-14"
+              ></li>
+              <li><a href="#" class="font-roboto font-size-20">Privacy Policy</a></li>
+              <li><a href="#" class="font-roboto font-size-20"
                 >Terms & Conditions</a
-              >
-            </div>
+              ></li>
+            </ul>
+            </nav>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Account</h4>
-            <div>
-              <a href="#" class="font-roboto font-size-14">My Account</a>
-              <a href="#" class="font-roboto font-size-14">Order History</a>
-              <a href="#" class="font-roboto font-size-14">Wish List</a>
-              <a href="#" class="font-roboto font-size-14">Newsletters</a>
-            </div>
+            <h4 class="font-mont font-size-lg">Account</h4>
+            <nav class="account-nav">
+              <ul>
+              <li><a href="#" class="font-roboto font-size-20">My Account</a></li>
+              <li><a href="#" class="font-roboto font-size-20">Order History</a></li>
+              <li><a href="#" class="font-roboto font-size-20">Wish List</a></li>
+              <li><a href="#" class="font-roboto font-size-20">Newsletters</a></li>
+            </ul>
+            </nav>
           </div>
         </div>
       </div>
-      <div>
+      <div class="copyrights">
         <p class="font-roboto font-size-14">
           &copyCopyrights 2023. Designed By <a href="#">Damion Voshall</a>
         </p>

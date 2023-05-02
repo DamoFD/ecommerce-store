@@ -36,18 +36,12 @@
   </head>
   <body>
     <!--start #header-->
-    <header id="header" class="color-secondary-bg">
-      <div>
-        <p class="font-roboto font-size-12">ipsum lisep</p>
-        <div class="font-roboto font-size-14">
-          <a href="#">Login</a>
-          <a href="#">Wishlist</a>
-        </div>
-      </div>
-
+    <header id="header" class="header__main">
       <!--Primary Navigation-->
       <nav class="navbar">
-        <h2 class="site-title"><a href="#" rel="home">Ecommerce Site</a></h2>
+        <a href="#" rel="home"
+          ><img src="./assets/lss-logo-white.png" class="header-img"
+        /></a>
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -64,19 +58,16 @@
             <a href="#">Category<i class="fas fa-chevron-down"></i></a>
           </li>
           <li class="nav-item"><a href="#">Coming Soon</a></li>
-          <li><i class="fas fa-search" id="search-icon"></i></li>
-          <li>
-            <input class="search-input" type="text" placeholder="Search.." />
+          <li class="nav-item nav-right"><a href="#">Login</a></li>
+          <li class="nav-item nav-right"><a href="#">Wishlist</a></li>
+          <li class="nav-item nav-right">
+            <form action="#">
+              <a href="#"
+                ><i class="fas fa-shopping-cart"><span>0</span></i></a
+              >
+            </form>
           </li>
         </ul>
-        <form action="#" class="font-size-14 font-roboto">
-          <a href="#" class="color-primary-bg">
-            <span class="font-size-16">
-              <i class="fas fa-shopping-cart"></i>
-            </span>
-            <span>0</span>
-          </a>
-        </form>
       </nav>
       <!--!Primary Navigation-->
     </header>
@@ -84,128 +75,208 @@
 
     <!--start #main-->
     <main id="main-site">
-
-        <!--Shopping cart section-->
-        <section id="cart">
-            <div>
-                <h5 class="font-mont font-size-20">Shopping Cart</h5>
-
-                <!--shopping cart items-->
-                <div class="row">
-                    <div class="col">
-                        <!--cart item-->
-                        <div class="row">
-                            <div class="col">
-                                <img src="./assets/products/product1.jpg" alt="cart1">
-                            </div>
-                            <div class="col">
-                                <h5 class="font-rale font-size-20">Samsung Galaxy S10</h5>
-                                <small>by Samsung</small>
-                                <!--product rating-->
-                                <div>
-                                    <div class="font-size-12 color-yellow">
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                      </div>
-                                      <a href="#" class="font-roboto font-size-14">20,534 ratings</a>
-                                </div>
-                                <!--!product rating-->
-
-                                <!--product qty-->
-                                <div class="qty">
-                                    <div class="font-roboto">
-                                        <button class="qty-up" data-id="pro1"><i class="fas fa-angle-up"></i></button>
-                            <input data-id="pro1" type="text" class="qty-input" disabled value="1" placeholder="1">
-                            <button class="qty-down"><i class="fas fa-angle-down" data-id="pro1"></i></button>
-                                    </div>
-                                    <button type="submit" class="font-roboto">Delete</button>
-                                    <button type="submit" class="font-roboto">Save for Later</button>
-                                </div>
-                                <!--!product qty-->
-                            </div>
-                            <div class="col">
-                                <div class="font-size-20 font-roboto">
-                                    $<span class="product__price">152</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--!cart item-->
-                        <!--cart item-->
-                        <div class="row">
-                            <div class="col">
-                                <img src="./assets/products/product2.jpg" alt="cart1">
-                            </div>
-                            <div class="col">
-                                <h5 class="font-rale font-size-20">Samsung Galaxy S10</h5>
-                                <small>by Samsung</small>
-                                <!--product rating-->
-                                <div>
-                                    <div class="font-size-12 color-yellow">
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                      </div>
-                                      <a href="#" class="font-roboto font-size-14">20,534 ratings</a>
-                                </div>
-                                <!--!product rating-->
-
-                                <!--product qty-->
-                                <div class="qty">
-                                    <div class="font-roboto">
-                                        <button class="qty-up"><i class="fas fa-angle-up"></i></button>
-                            <input type="text" class="qty-input" disabled value="1" placeholder="1">
-                            <button class="qty-down"><i class="fas fa-angle-down"></i></button>
-                                    </div>
-                                    <button type="submit" class="font-roboto">Delete</button>
-                                    <button type="submit" class="font-roboto">Save for Later</button>
-                                </div>
-                                <!--!product qty-->
-                            </div>
-                            <div class="col">
-                                <div class="font-size-20 font-roboto">
-                                    $<span class="product__price">152</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--!cart item-->
-                    </div>
-                    <!--Subtotal Section-->
-                    <div class="col">
-                        <div class="sub-total">
-                            <h6 class="font-size-12 font-roboto"><i class="fa fa-check"></i>Your order is eligible for FREE delivery</h6>
-                            <div>
-                                <h5 class="font-rale font-size-20">Subtotal (2 items)&nbsp<span>$<span id="deal-price">152.00</span></h5>
-                                <button type="submit">Proceed to Checkout</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--!Subtotal Section-->
-                </div>
-                <!--!shopping cart items-->
-            </div>
-        </section>
-        <!--!Shopping cart section-->
-
-      <!--New Phones-->
-      <section id="new-phones">
+      <!--Shopping cart section-->
+      <section id="cart">
         <div>
-          <h4 class="font-mont font-size-20">New Phones</h4>
-          <hr />
+          <h1 class="font-mont font-size-xl color-primary">Shopping Cart</h1>
+
+          <!--shopping cart items-->
+          <div class="container">
+            <div class="items">
+              <!--cart item-->
+              <div class="item">
+                <div class="col">
+                  <img src="./assets/products/dress-shirt.jpg" alt="cart1" />
+                </div>
+                <div class="col">
+                  <div class="product-info">
+                    <h2 class="font-rale font-size-lg color-primary">
+                      Men's Shirt
+                    </h2>
+                    <p class="font-roboto font-size-16 color-primary">
+                      Pearl White | M
+                    </p>
+                    <!--product rating-->
+                    <div>
+                      <div class="font-size-20 color-primary">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                      </div>
+                      <a href="#" class="font-roboto font-size-20 color-primary"
+                        >20,534 ratings</a
+                      >
+                    </div>
+                  </div>
+                  <!--!product rating-->
+
+                  <!--product qty-->
+                  <div class="qty">
+                    <div class="font-roboto">
+                      <button
+                        class="qty-up font-size-20 color-primary"
+                        data-id="pro1"
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                      <input
+                        data-id="pro1"
+                        type="text"
+                        class="qty-input color-primary font-roboto font-size-20"
+                        disabled
+                        value="1"
+                        placeholder="1"
+                      />
+                      <button
+                        class="qty-down font-size-20 color-primary"
+                        data-id="pro1"
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </button>
+                    </div>
+                    <button
+                      type="submit"
+                      class="font-roboto btn font-size-20 color-primary"
+                    >
+                      Save for Later
+                    </button>
+                    <button
+                      type="submit"
+                      class="font-roboto btn font-size-20 color-primary"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                  <!--!product qty-->
+                </div>
+                <div class="col">
+                  <div class="font-size-lg font-roboto">
+                    $<span class="product__price">152</span>
+                  </div>
+                </div>
+              </div>
+              <!--!cart item-->
+              <!--cart item-->
+              <div class="item">
+                <div class="col">
+                  <img src="./assets/products/womens-dress.jpg" alt="cart1" />
+                </div>
+                <div class="col">
+                  <div class="product-info">
+                    <h2 class="font-rale font-size-lg color-primary">
+                      Women's Dress
+                    </h2>
+                    <p class="font-roboto font-size-16 color-primary">
+                      Sky Blue | L
+                    </p>
+                    <!--product rating-->
+                    <div>
+                      <div class="font-size-20 color-primary">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                      </div>
+                      <a href="#" class="font-roboto font-size-20 color-primary"
+                        >20,534 ratings</a
+                      >
+                    </div>
+                  </div>
+                  <!--!product rating-->
+
+                  <!--product qty-->
+                  <div class="qty">
+                    <div class="font-roboto">
+                      <button
+                        class="qty-up font-size-20 color-primary"
+                        data-id="pro1"
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                      <input
+                        data-id="pro1"
+                        type="text"
+                        class="qty-input color-primary font-roboto font-size-20"
+                        disabled
+                        value="1"
+                        placeholder="1"
+                      />
+                      <button
+                        class="qty-down font-size-20 color-primary"
+                        data-id="pro1"
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </button>
+                    </div>
+                    <button
+                      type="submit"
+                      class="font-roboto btn font-size-20 color-primary"
+                    >
+                      Save for Later
+                    </button>
+                    <button
+                      type="submit"
+                      class="font-roboto btn font-size-20 color-primary"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                  <!--!product qty-->
+                </div>
+                <div class="col">
+                  <div class="font-size-lg font-roboto">
+                    $<span class="product__price">152</span>
+                  </div>
+                </div>
+              </div>
+              <!--!cart item-->
+            </div>
+            <!--Subtotal Section-->
+            <div class="col">
+              <div class="sub-total">
+                <p class="font-size-20 font-roboto color-primary">
+                  <i class="fa fa-check"></i>Your order is eligible for FREE
+                  delivery
+                </p>
+                <h2 class="font-rale font-size-lg color-primary">
+                  Subtotal (2 items)&nbsp
+                  <span>
+                    $
+                    <span id="deal-price"> 152.00 </span>
+                  </span>
+                </h2>
+                <button
+                  type="submit"
+                  class="font-size-20 color-primary-bg font-roboto checkout-btn"
+                >
+                  Proceed to Checkout
+                </button>
+              </div>
+            </div>
+            <!--!Subtotal Section-->
+          </div>
+          <!--!shopping cart items-->
+        </div>
+      </section>
+      <!--!Shopping cart section-->
+
+      <!--New Arrivals-->
+      <section id="new-arrivals">
+        <div>
+          <h2 class="font-mont font-size-xl color-primary">New Arrivals</h2>
           <!--Owl Carousel-->
           <div class="owl-carousel owl-theme">
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product1.jpg" alt="product1"
+                  ><img src="./assets/products/dress-shirt.jpg" alt="product1"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Men's Shirt</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
@@ -213,9 +284,12 @@
                     <span><i class="far fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$152</span>
+                    <span class="font-size-20 color-primary">$49.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -224,11 +298,11 @@
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product2.jpg" alt="product2"
+                  ><img src="./assets/products/womens-jeans.jpg" alt="product2"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Jeans</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
@@ -236,9 +310,12 @@
                     <span><i class="fas fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$199</span>
+                    <span class="font-size-20 color-primary">$39.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -247,21 +324,76 @@
             <div class="item">
               <div class="product font-roboto">
                 <a href="#"
-                  ><img src="./assets/products/product3.jpg" alt="product3"
+                  ><img src="./assets/products/womens-dress.jpg" alt="product3"
                 /></a>
-                <div>
-                  <h6>Samsung Galaxy 10</h6>
-                  <div class="font-size-12 color-yellow">
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Dress</h3>
+                  <div class="font-size-20 color-primary">
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
                     <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
                     <span><i class="far fa-star"></i></span>
                   </div>
                   <div>
-                    <span>$299</span>
+                    <span class="font-size-20 color-primary">$99.99</span>
                   </div>
-                  <button type="submit" class="font-size-12">
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="product font-roboto">
+                <a href="#"
+                  ><img src="./assets/products/mens-jeans.jpg" alt="product3"
+                /></a>
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Men's Jeans</h3>
+                  <div class="font-size-20 color-primary">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                  </div>
+                  <div>
+                    <span class="font-size-20 color-primary">$49.99</span>
+                  </div>
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="product font-roboto">
+                <a href="#"
+                  ><img src="./assets/products/womens-shoes.jpg" alt="product3"
+                /></a>
+                <div class="product-info">
+                  <h3 class="font-size-lg color-primary">Women's Shoes</h3>
+                  <div class="font-size-20 color-primary">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="far fa-star"></i></span>
+                  </div>
+                  <div>
+                    <span class="font-size-20 color-primary">$89.99</span>
+                  </div>
+                  <button
+                    type="submit"
+                    class="font-size-20 product-btn color-primary-bg"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -271,58 +403,80 @@
           <!--!Owl Carousel-->
         </div>
       </section>
-      <!--!New Phones-->
+      <!--!New Arrivals-->
     </main>
     <!--!start #main-->
 
     <!--start #footer-->
-    <footer id="footer">
-      <div>
+    <footer class="color-primary-bg" id="footer">
+      <div class="footer-container">
         <div class="row">
           <div class="col">
-            <h4 class="font-mont font-size-20">Ecommerce Site</h4>
-            <p class="font-size-14 font-roboto">
+            <h2 class="font-mont font-size-lg">Luxe Style Society</h2>
+            <p class="font-size-20 font-roboto">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
               dolore, possimus suscipit sed aliquid dolores consequuntur
               inventore totam ex saepe.
             </p>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Newsletter</h4>
+            <h4 class="font-mont font-size-lg">Newsletter</h4>
             <form>
               <div class="col">
-                <input type="text" placeholder="Email" />
+                <input class="font-size-20" type="text" placeholder="Email" />
               </div>
-              <div class="col">
-                <button type="submit">Subscribe</button>
-              </div>
+              <button class="color-primary font-size-20" type="submit">
+                Subscribe
+              </button>
             </form>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Information</h4>
-            <div>
-              <a href="#" class="font-roboto font-size-14">About Us</a>
-              <a href="#" class="font-roboto font-size-14"
-                >Delivery Information</a
-              >
-              <a href="#" class="font-roboto font-size-14">Privacy Policy</a>
-              <a href="#" class="font-roboto font-size-14"
-                >Terms & Conditions</a
-              >
-            </div>
+            <h4 class="font-mont font-size-lg">Information</h4>
+            <nav>
+              <ul>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">About Us</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Delivery Information</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Terms & Conditions</a
+                  >
+                </li>
+              </ul>
+            </nav>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-20">Account</h4>
-            <div>
-              <a href="#" class="font-roboto font-size-14">My Account</a>
-              <a href="#" class="font-roboto font-size-14">Order History</a>
-              <a href="#" class="font-roboto font-size-14">Wish List</a>
-              <a href="#" class="font-roboto font-size-14">Newsletters</a>
-            </div>
+            <h4 class="font-mont font-size-lg">Account</h4>
+            <nav class="account-nav">
+              <ul>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">My Account</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Order History</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Wish List</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Newsletters</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-      <div>
+      <div class="copyrights">
         <p class="font-roboto font-size-14">
           &copyCopyrights 2023. Designed By <a href="#">Damion Voshall</a>
         </p>

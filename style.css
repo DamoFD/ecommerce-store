@@ -449,9 +449,89 @@ input, input:focus {
 #footer a {
   color: white;
 }
+#footer .footer-container .col input {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(138, 137, 137);
+  color: white;
+  padding-left: 10px;
+}
+#footer .footer-container .col input::placeholder {
+  color: rgb(184, 183, 183);
+}
+#footer .footer-container .col button {
+  padding: 5px;
+  border: none;
+  background-color: rgb(138, 137, 137);
+}
+#footer .footer-container .col > *, #footer li, #footer button {
+  margin-top: 10px;
+}
 #footer .copyrights {
   text-align: center;
   margin-top: 100px;
+}
+
+#cart {
+  margin-top: 100px;
+}
+#cart h1 {
+  margin-left: 20px;
+}
+#cart .col img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+#cart .container {
+  display: flex;
+  justify-content: space-between;
+}
+#cart .container .item {
+  display: flex;
+  margin-top: 20px;
+}
+#cart .container .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+#cart .container .qty {
+  display: flex;
+  justify-content: space-between;
+}
+#cart .container .qty input {
+  width: 50px;
+  text-align: center;
+}
+#cart .container .qty .btn {
+  margin-left: 50px;
+  border: none;
+  text-decoration: underline;
+}
+#cart .container .qty .qty-up, #cart .container .qty .qty-down {
+  border: none;
+}
+#cart .container .qty .qty-up:hover, #cart .container .qty .qty-down:hover {
+  cursor: pointer;
+}
+#cart .container .sub-total {
+  margin-right: 500px;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-between;
+}
+#cart .container .checkout-btn {
+  padding: 10px;
+  color: white;
+  border: none;
+  transition: background-color 0.5s ease;
+}
+#cart .container .checkout-btn:hover {
+  cursor: pointer;
+  background-color: rgb(27, 27, 27);
 }
 
 /*# sourceMappingURL=style.css.map */
