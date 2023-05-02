@@ -1,0 +1,24 @@
+#blogs {
+
+    h2 {
+        margin: 20px;
+    }
+
+    .card {
+        display: flex;
+    }
+
+    .col {
+        width: calc(50% - 40px);
+        margin: 20px;
+    }
+
+    .col img {
+        object-fit: cover;
+        height: 300px;
+    }
+
+    p {
+        margin: 20px 0;
+    }
+}

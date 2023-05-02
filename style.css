@@ -9,6 +9,15 @@ button, button:focus {
   box-shadow: none;
 }
 
+ul, li {
+  list-style: none;
+}
+
+input, input:focus {
+  border: none;
+  outline: none;
+}
+
 .font-roboto {
   font-family: "Roboto", sans-serif;
 }
@@ -399,6 +408,50 @@ button, button:focus {
 }
 #banner_ads img {
   width: 50%;
+}
+
+#blogs h2 {
+  margin: 20px;
+}
+#blogs .card {
+  display: flex;
+}
+#blogs .col {
+  width: calc(50% - 40px);
+  margin: 20px;
+}
+#blogs .col img {
+  object-fit: cover;
+  height: 300px;
+}
+#blogs p {
+  margin: 20px 0;
+}
+
+#footer {
+  margin-top: 50px;
+  color: white;
+}
+#footer .footer-container {
+  margin: 20px;
+  padding-top: 20px;
+}
+#footer .footer-container .row {
+  display: flex;
+  justify-content: space-between;
+}
+#footer .footer-container .col {
+  width: 20%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+}
+#footer a {
+  color: white;
+}
+#footer .copyrights {
+  text-align: center;
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
