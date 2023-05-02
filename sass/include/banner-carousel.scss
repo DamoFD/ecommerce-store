@@ -1,0 +1,40 @@
+#banner-area {
+    .owl-carousel .item .product a {
+        overflow: hidden;
+    }
+
+    .owl-carousel .item .product img {
+    }
+
+    .owl-carousel .item .product img:hover {
+    }
+
+    .owl-carousel .owl-nav button {
+        position: absolute;
+        top: 30%;
+        outline: none;
+    }
+
+    .owl-carousel .owl-nav button:hover {
+        background: none;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev {
+        left: 0;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev span,
+    .owl-carousel .owl-nav button.owl-next span {
+        font-size: 150px;
+        color: white;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev span:hover,
+    .owl-carousel .owl-nav button.owl-next span:hover {
+        color: #8e8e8e;
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+        right: 0;
+    }
+}

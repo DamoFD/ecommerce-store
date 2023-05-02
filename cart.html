@@ -84,173 +84,117 @@
 
     <!--start #main-->
     <main id="main-site">
-      <!--Product-->
-      <section id="product">
-        <div>
-          <div class="row">
-            <div class="col">
-              <img src="./assets/products/product1.jpg" alt="product1" />
-              <div class="font-size-16 font-rale">
-                <div class="col">
-                  <button type="submit">Proceed to Buy</button>
-                </div>
-                <div class="col">
-                  <button type="submit">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <h5 class="font-rale font-size-20">Samsung Galaxy S20</h5>
-              <small>by Samsung</small>
-              <div>
-                <div class="font-size-12 color-yellow">
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="far fa-star"></i></span>
-                </div>
-                <a href="#" class="font-roboto font-size-14"
-                  >20,534 ratings | 1000+ answered questions</a
-                >
-              </div>
-              <hr />
 
-              <!--Product Price-->
-              <table>
-                <tr class="font-roboto font-size-14">
-                  <td>M.R.P</td>
-                  <td><strike>$162.00</strike></td>
-                </tr>
-                <tr class="font-roboto font-size-14">
-                  <td>Deal Price:</td>
-                  <td class="font-size-20">
-                    $<span>152.00</span
-                    ><small class="font-size-12"
-                      >&nbsp&nbspTaxes Included</small
-                    >
-                  </td>
-                </tr>
-                <tr class="font-roboto font-size-14">
-                  <td>You Save:</td>
-                  <td><span class="font-size-16">$10.00</span></td>
-                </tr>
-              </table>
-              <!--!Product Price-->
+        <!--Shopping cart section-->
+        <section id="cart">
+            <div>
+                <h5 class="font-mont font-size-20">Shopping Cart</h5>
 
-              <!--#policy-->
-              <div id="policy">
-                <div>
-                  <div>
-                    <div class="font-size-20 color-secondary">
-                      <span class="fas fa-retweet"></span>
-                    </div>
-                    <a href="#" class="font-roboto font-size-12"
-                      >10 Days <br />
-                      Replacement</a
-                    >
-                  </div>
-                  <div>
-                    <div class="font-size-20 color-secondary">
-                      <span class="fas fa-truck"></span>
-                    </div>
-                    <a href="#" class="font-roboto font-size-12"
-                      >Delivery <br />
-                      Information</a
-                    >
-                  </div>
-                  <div>
-                    <div class="font-size-20 color-secondary">
-                      <span class="fas fa-check-double"></span>
-                    </div>
-                    <a href="#" class="font-roboto font-size-12"
-                      >1 Year <br />
-                      Warranty</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!--!policy-->
-              <hr />
+                <!--shopping cart items-->
+                <div class="row">
+                    <div class="col">
+                        <!--cart item-->
+                        <div class="row">
+                            <div class="col">
+                                <img src="./assets/products/product1.jpg" alt="cart1">
+                            </div>
+                            <div class="col">
+                                <h5 class="font-rale font-size-20">Samsung Galaxy S10</h5>
+                                <small>by Samsung</small>
+                                <!--product rating-->
+                                <div>
+                                    <div class="font-size-12 color-yellow">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                      </div>
+                                      <a href="#" class="font-roboto font-size-14">20,534 ratings</a>
+                                </div>
+                                <!--!product rating-->
 
-              <!--Order Details-->
-              <div id="order-details" class="font-roboto">
-                <small>Delivery by : Mar 29 - Apr 1</small>
-                <small
-                  >Sold by <a href="#">Daily Electronics</a>(4.5 out of 5 |
-                  18,198 ratings)</small
-                >
-                <small
-                  ><i class="fas fa-map-marker-alt color-primary"></i
-                  >&nbsp&nbspDeliver to Customer -424201</small
-                >
-              </div>
-              <!--!Order Details-->
+                                <!--product qty-->
+                                <div class="qty">
+                                    <div class="font-roboto">
+                                        <button class="qty-up" data-id="pro1"><i class="fas fa-angle-up"></i></button>
+                            <input data-id="pro1" type="text" class="qty-input" disabled value="1" placeholder="1">
+                            <button class="qty-down"><i class="fas fa-angle-down" data-id="pro1"></i></button>
+                                    </div>
+                                    <button type="submit" class="font-roboto">Delete</button>
+                                    <button type="submit" class="font-roboto">Save for Later</button>
+                                </div>
+                                <!--!product qty-->
+                            </div>
+                            <div class="col">
+                                <div class="font-size-20 font-roboto">
+                                    $<span class="product__price">152</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--!cart item-->
+                        <!--cart item-->
+                        <div class="row">
+                            <div class="col">
+                                <img src="./assets/products/product2.jpg" alt="cart1">
+                            </div>
+                            <div class="col">
+                                <h5 class="font-rale font-size-20">Samsung Galaxy S10</h5>
+                                <small>by Samsung</small>
+                                <!--product rating-->
+                                <div>
+                                    <div class="font-size-12 color-yellow">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                      </div>
+                                      <a href="#" class="font-roboto font-size-14">20,534 ratings</a>
+                                </div>
+                                <!--!product rating-->
 
-              <div class="row">
-                <div class="col">
-                  <!--color-->
-                  <div class="color">
-                    <div>
-                      <h6 class="font-rale">Color:</h6>
-                      <div class="color-yellow-bg">
-                        <button class="font-size-14"></button>
-                      </div>
-                      <div class="color-primary-bg">
-                        <button class="font-size-14"></button>
-                      </div>
-                      <div class="color-secondary-bg">
-                        <button class="font-size-14"></button>
-                      </div>
-                    </div>
-                  </div>
-                  <!--!color-->
-                </div>
-                <div class="col">
-                    <!--product qty section-->
-                    <div class="qty">
-                        <h6 class="font-rale">Qty:</h6>
-                        <div class="font-roboto">
-                            <button class="qty-up"><i class="fas fa-angle-up"></i></button>
+                                <!--product qty-->
+                                <div class="qty">
+                                    <div class="font-roboto">
+                                        <button class="qty-up"><i class="fas fa-angle-up"></i></button>
                             <input type="text" class="qty-input" disabled value="1" placeholder="1">
                             <button class="qty-down"><i class="fas fa-angle-down"></i></button>
+                                    </div>
+                                    <button type="submit" class="font-roboto">Delete</button>
+                                    <button type="submit" class="font-roboto">Save for Later</button>
+                                </div>
+                                <!--!product qty-->
+                            </div>
+                            <div class="col">
+                                <div class="font-size-20 font-roboto">
+                                    $<span class="product__price">152</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--!cart item-->
+                    </div>
+                    <!--Subtotal Section-->
+                    <div class="col">
+                        <div class="sub-total">
+                            <h6 class="font-size-12 font-roboto"><i class="fa fa-check"></i>Your order is eligible for FREE delivery</h6>
+                            <div>
+                                <h5 class="font-rale font-size-20">Subtotal (2 items)&nbsp<span>$<span id="deal-price">152.00</span></h5>
+                                <button type="submit">Proceed to Checkout</button>
+                            </div>
                         </div>
                     </div>
-                    <!--!product qty section-->
+                    <!--!Subtotal Section-->
                 </div>
-              </div>
-              <!--size-->
-              <div class="size">
-                <h6 class="font-rale">Size:</h6>
-                <div>
-                    <div class="font-roboto">
-                        <button class="font-size-14">4GB RAM</button>
-                    </div>
-                    <div class="font-roboto">
-                        <button class="font-size-14">6GB RAM</button>
-                    </div>
-                    <div class="font-roboto">
-                        <button class="font-size-14">8GB RAM</button>
-                    </div>
-                </div>
-              </div>
-              <!--!size-->
+                <!--!shopping cart items-->
             </div>
-            <div class="col">
-                <h6 class="font-rale">Product Description</h6>
-                <hr>
-                <p class="font-roboto font-size-14">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet soluta omnis voluptates nulla neque corporis explicabo quasi minima blanditiis! Error.</p>
-                <p class="font-roboto font-size-14">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet soluta omnis voluptates nulla neque corporis explicabo quasi minima blanditiis! Error.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--!Product-->
+        </section>
+        <!--!Shopping cart section-->
 
-      <!--Top Sale-->
-      <section id="top-sale">
+      <!--New Phones-->
+      <section id="new-phones">
         <div>
-          <h4 class="font-mont font-size-20">Top Sale</h4>
+          <h4 class="font-mont font-size-20">New Phones</h4>
           <hr />
           <!--Owl Carousel-->
           <div class="owl-carousel owl-theme">
@@ -327,7 +271,7 @@
           <!--!Owl Carousel-->
         </div>
       </section>
-      <!--!Top Sale-->
+      <!--!New Phones-->
     </main>
     <!--!start #main-->
 

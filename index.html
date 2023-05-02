@@ -36,18 +36,10 @@
   </head>
   <body>
     <!--start #header-->
-    <header id="header" class="color-secondary-bg">
-      <div>
-        <p class="font-roboto font-size-12">ipsum lisep</p>
-        <div class="font-roboto font-size-14">
-          <a href="#">Login</a>
-          <a href="#">Wishlist</a>
-        </div>
-      </div>
-
+    <header id="header" class="header__main">
       <!--Primary Navigation-->
       <nav class="navbar">
-        <h2 class="site-title"><a href="#" rel="home">Ecommerce Site</a></h2>
+        <a href="#" rel="home"><img src="./assets/lss-logo-white.png" class="header-img"></a>
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -64,19 +56,10 @@
             <a href="#">Category<i class="fas fa-chevron-down"></i></a>
           </li>
           <li class="nav-item"><a href="#">Coming Soon</a></li>
-          <li><i class="fas fa-search" id="search-icon"></i></li>
-          <li>
-            <input class="search-input" type="text" placeholder="Search.." />
-          </li>
+          <li class="nav-item nav-right"><a href="#">Login</a></li>
+          <li class="nav-item nav-right"><a href="#">Wishlist</a></li>
+          <li class="nav-item nav-right"><form action="#"><a href="#"><i class="fas fa-shopping-cart"><span>0</span></i></a></form></li>
         </ul>
-        <form action="#" class="font-size-14 font-roboto">
-          <a href="#" class="color-primary-bg">
-            <span class="font-size-16">
-              <i class="fas fa-shopping-cart"></i>
-            </span>
-            <span>0</span>
-          </a>
-        </form>
       </nav>
       <!--!Primary Navigation-->
     </header>

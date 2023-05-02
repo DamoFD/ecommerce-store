@@ -4,6 +4,7 @@ $(document).ready(function(){
     $("#banner-area .owl-carousel").owlCarousel({
         dots: true,
         items: 1,
+        nav: true
     });
 
     //top sale carousel
@@ -73,4 +74,39 @@ $(document).ready(function(){
         }
     });
 
+    //product qty section
+    let $qty__up = $(".qty .qty-up");
+    let $qty__down = $(".qty .qty-down");
+    let $input = $(".qty .qty-input");
+
+    //click qty up button
+    $qty__up.click(function(e) {
+        if ($input.val() >= 1 && $input.val() <= 9) {
+            $input.val(function(i, oldval) {
+                return ++oldval;
+            })
+        }
+    });
+
+    //click qty down button
+    $qty__down.click(function(e) {
+        if ($input.val() > 1 && $input.val() <= 10) {
+            $input.val(function(i, oldval) {
+                return --oldval;
+            })
+        }
+    });
+
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+	var menuToggle = document.querySelector(".menu-toggle");
+  
+	if (menuToggle) {
+	  menuToggle.addEventListener("click", function() {
+		var nav = document.querySelector(".main-nav");
+		nav.classList.toggle("mobile-nav");
+		this.classList.toggle("is-active");
+	  });
+	}
+  });
