@@ -51,7 +51,7 @@ $(document).ready(function(){
     });
 
     //new phones carousel
-    $("#new-phones .owl-carousel").owlCarousel({
+    $("#new-arrivals .owl-carousel").owlCarousel({
         loop: true,
         nav: false,
         dots: false,
