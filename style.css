@@ -37,12 +37,20 @@ button, button:focus {
   font-size: 20px;
 }
 
+.font-size-lg {
+  font-size: 30px;
+}
+
+.font-size-xl {
+  font-size: 75px;
+}
+
 .color-primary {
-  color: #b108bd;
+  color: rgb(54, 54, 54);
 }
 
 .color-primary-bg {
-  background: #b108bd;
+  background: rgb(54, 54, 54);
 }
 
 .color-secondary {
@@ -192,8 +200,37 @@ button, button:focus {
     transform: translate(0%) !important;
   }
 }
-#banner-area .owl-carousel .item .product a {
-  overflow: hidden;
+#banner-area .owl-carousel .item img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+#banner-area .owl-carousel .item {
+  position: relative;
+}
+#banner-area .owl-carousel .item .item-header {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20%;
+  align-items: center;
+  color: rgb(54, 54, 54);
+}
+#banner-area .banner-btn {
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  border: none;
+  background-color: rgb(54, 54, 54);
+  color: white;
+  transition: background-color 0.5s ease;
+}
+#banner-area .banner-btn:hover {
+  cursor: pointer;
+  background-color: rgb(27, 27, 27);
 }
 #banner-area .owl-carousel .owl-nav button {
   position: absolute;
@@ -209,7 +246,8 @@ button, button:focus {
 #banner-area .owl-carousel .owl-nav button.owl-prev span,
 #banner-area .owl-carousel .owl-nav button.owl-next span {
   font-size: 150px;
-  color: white;
+  color: rgb(54, 54, 54);
+  transition: color 0.5s ease;
 }
 #banner-area .owl-carousel .owl-nav button.owl-prev span:hover,
 #banner-area .owl-carousel .owl-nav button.owl-next span:hover {
@@ -219,36 +257,36 @@ button, button:focus {
   right: 0;
 }
 
-#top-sale .owl-carousel .item .product a {
+#featured .owl-carousel .item .product a {
   overflow: hidden;
 }
-#top-sale .owl-carousel .item .product img {
+#featured .owl-carousel .item .product img {
   transition: transform 0.5s ease;
 }
-#top-sale .owl-carousel .item .product img:hover {
+#featured .owl-carousel .item .product img:hover {
   transform: scale(1.1);
 }
-#top-sale .owl-carousel .owl-nav button {
+#featured .owl-carousel .owl-nav button {
   position: absolute;
   top: 30%;
   outline: none;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev {
+#featured .owl-carousel .owl-nav button.owl-prev {
   left: 0;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev span,
-#top-sale .owl-carousel .owl-nav button.owl-next span {
+#featured .owl-carousel .owl-nav button.owl-prev span,
+#featured .owl-carousel .owl-nav button.owl-next span {
   font-size: 35px;
-  color: #b108bd;
+  color: rgb(54, 54, 54);
   padding: 0 1rem;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev span {
+#featured .owl-carousel .owl-nav button.owl-prev span {
   margin-left: -4rem;
 }
-#top-sale .owl-carousel .owl-nav button.owl-next {
+#featured .owl-carousel .owl-nav button.owl-next {
   right: 0;
 }
-#top-sale .owl-carousel .owl-nav button.owl-next span {
+#featured .owl-carousel .owl-nav button.owl-next span {
   margin-right: -4rem;
 }
 

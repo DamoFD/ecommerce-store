@@ -2,13 +2,18 @@ $(document).ready(function(){
 
     //banner carousel
     $("#banner-area .owl-carousel").owlCarousel({
-        dots: true,
+        loop: true,
+        dots: false,
         items: 1,
-        nav: true
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn'
     });
 
     //top sale carousel
-    $("#top-sale .owl-carousel").owlCarousel({
+    $("#featured .owl-carousel").owlCarousel({
         loop: true,
         nav: true,
         dots: false,
