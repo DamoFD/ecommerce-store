@@ -473,7 +473,7 @@ input, input:focus {
 }
 
 #cart {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 #cart h1 {
   margin-left: 20px;
@@ -532,6 +532,113 @@ input, input:focus {
 #cart .container .checkout-btn:hover {
   cursor: pointer;
   background-color: rgb(27, 27, 27);
+}
+
+#product {
+  margin-top: 150px;
+}
+#product .row .col img {
+  object-fit: cover;
+  width: 500px;
+  height: 700px;
+}
+#product .row {
+  display: flex;
+  justify-content: space-evenly;
+}
+#product .product-ratings {
+  display: flex;
+}
+#product .product-ratings a {
+  margin-left: 20px;
+}
+#product .pricing {
+  display: flex;
+  margin-top: 50px;
+}
+#product .price, #product .discount {
+  margin-left: 20px;
+}
+#product .discount {
+  color: red;
+}
+#product .color {
+  margin-top: 50px;
+}
+#product .color .color-btns {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+#product .color button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100%;
+  transition: border 0.5s ease;
+}
+#product .color button:hover {
+  cursor: pointer;
+  border: 2px solid rgb(54, 54, 54) !important;
+}
+#product .active-border {
+  border: 2px solid rgb(54, 54, 54) !important;
+  box-sizing: border-box;
+}
+#product .size {
+  margin-top: 50px;
+}
+#product .size .size-btns {
+  margin-top: 20px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+#product .size button {
+  padding: 20px 50px;
+  border: 1px solid rgb(184, 183, 183);
+  transition: border-color 0.5s ease;
+}
+#product .size button:hover {
+  cursor: pointer;
+  border-color: rgb(54, 54, 54);
+}
+#product .active-background {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  border: none;
+}
+#product .purchase-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+#product .qty {
+  display: flex;
+}
+#product .qty input {
+  width: 30px;
+  text-align: center;
+}
+#product .purchase-btns button {
+  margin: 0 20px;
+  color: white;
+  border: none;
+  padding: 20px;
+  transition: background-color 0.5s ease;
+}
+#product .purchase-btns button:hover {
+  cursor: pointer;
+  background-color: rgb(27, 27, 27);
+}
+#product .product-description {
+  margin-left: 20px;
+  margin-top: 70px;
+  width: 80%;
+}
+#product .product-description p {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

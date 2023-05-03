@@ -86,10 +86,11 @@ $(document).ready(function(){
     //product qty section
     let $qty__up = $(".qty .qty-up");
     let $qty__down = $(".qty .qty-down");
-    let $input = $(".qty .qty-input");
+    //let $input = $(".qty .qty-input");
 
     //click qty up button
     $qty__up.click(function(e) {
+        let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
         if ($input.val() >= 1 && $input.val() <= 9) {
             $input.val(function(i, oldval) {
                 return ++oldval;
@@ -99,11 +100,30 @@ $(document).ready(function(){
 
     //click qty down button
     $qty__down.click(function(e) {
+        let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
         if ($input.val() > 1 && $input.val() <= 10) {
             $input.val(function(i, oldval) {
                 return --oldval;
             })
         }
+    });
+
+    //color picker
+    $(".color button").on("click", function() {
+        $(".color button").removeClass("active-border");
+        $(this).addClass("active-border");
+
+        const colorName = $(this).data("color-name");
+        $("p.color-text").text("Color: " + colorName);
+    });
+
+    //size picker
+    $(".size button").on("click", function() {
+        $(".size button").removeClass("active-background");
+        $(this).addClass("active-background");
+
+        const sizeName = $(this).data("size");
+        $("p.size-text").text("Size: " + sizeName);
     });
 
 });
