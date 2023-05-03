@@ -27,13 +27,14 @@
         </div>
 
         <div class="grid">
-          <div class="grid-item men">
+          <?php array_map(function($item){ ?>
+          <div class="grid-item <?php echo $item['item_category'] ?? "category"; ?>">
             <div class="product font-roboto">
               <a href="#"
-                ><img src="./assets/products/dress-shirt.jpg" alt="product1"
+                ><img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="product1"
               /></a>
               <div class="product-info">
-                <h3 class="font-size-lg color-primary">Men's Shirt</h3>
+                <h3 class="font-size-lg color-primary"><?php echo $item['item_name'] ?? "Unknown"; ?></h3>
                 <div class="font-size-20 color-primary">
                   <span><i class="fas fa-star"></i></span>
                   <span><i class="fas fa-star"></i></span>
@@ -42,7 +43,7 @@
                   <span><i class="far fa-star"></i></span>
                 </div>
                 <div>
-                  <span class="font-size-20 color-primary">$89.99</span>
+                  <span class="font-size-20 color-primary"><?php echo $item['item_price'] ?? "0"; ?></span>
                 </div>
                 <button
                   type="submit"
@@ -53,110 +54,7 @@
               </div>
             </div>
           </div>
-          <div class="grid-item women">
-            <div class="product font-roboto">
-              <a href="#"
-                ><img src="./assets/products/womens-dress.jpg" alt="product1"
-              /></a>
-              <div class="product-info">
-                <h3 class="font-size-lg color-primary">Women's Dress</h3>
-                <div class="font-size-20 color-primary">
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="far fa-star"></i></span>
-                </div>
-                <div>
-                  <span class="font-size-20 color-primary">$89.99</span>
-                </div>
-                <button
-                  type="submit"
-                  class="font-size-20 product-btn color-primary-bg"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item men">
-            <div class="product font-roboto">
-              <a href="#"
-                ><img src="./assets/products/mens-jeans.jpg" alt="product1"
-              /></a>
-              <div class="product-info">
-                <h3 class="font-size-lg color-primary">Men's Jeans</h3>
-                <div class="font-size-20 color-primary">
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="far fa-star"></i></span>
-                </div>
-                <div>
-                  <span class="font-size-20 color-primary">$89.99</span>
-                </div>
-                <button
-                  type="submit"
-                  class="font-size-20 product-btn color-primary-bg"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item women">
-            <div class="product font-roboto">
-              <a href="#"
-                ><img src="./assets/products/womens-jeans.jpg" alt="product1"
-              /></a>
-              <div class="product-info">
-                <h3 class="font-size-lg color-primary">Women's Jeans</h3>
-                <div class="font-size-20 color-primary">
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="far fa-star"></i></span>
-                </div>
-                <div>
-                  <span class="font-size-20 color-primary">$89.99</span>
-                </div>
-                <button
-                  type="submit"
-                  class="font-size-20 product-btn color-primary-bg"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item women">
-            <div class="product font-roboto">
-              <a href="#"
-                ><img src="./assets/products/womens-shoes.jpg" alt="product1"
-              /></a>
-              <div class="product-info">
-                <h3 class="font-size-lg color-primary">Women's Shoes</h3>
-                <div class="font-size-20 color-primary">
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="fas fa-star"></i></span>
-                  <span><i class="far fa-star"></i></span>
-                </div>
-                <div>
-                  <span class="font-size-20 color-primary">$89.99</span>
-                </div>
-                <button
-                  type="submit"
-                  class="font-size-20 product-btn color-primary-bg"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
+          <?php },$product_shuffle) ?>
         </div>
       </section>
       <!--!Featured Categories-->
