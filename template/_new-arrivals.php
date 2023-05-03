@@ -2,6 +2,14 @@
 
 <?php
 shuffle($product_shuffle);
+
+// request method post
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  if(isset($_POST['new_arrivals_submit'])){
+    // call method addToCart
+    $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
+  }
+}
 ?>
 
 <section id="new-arrivals">
@@ -27,12 +35,17 @@ shuffle($product_shuffle);
                   <div>
                     <span class="font-size-20 color-primary">$<?php echo $item['item_price'] ?? '0'; ?></span>
                   </div>
+                  <form method="post">
+                    <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                   <button
                     type="submit"
+                    name="new_arrivals_submit"
                     class="font-size-20 product-btn color-primary-bg"
                   >
                     Add to Cart
                   </button>
+                  </form>
                 </div>
               </div>
             </div>
