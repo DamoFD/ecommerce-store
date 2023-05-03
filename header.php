@@ -42,6 +42,13 @@
 
     <!--Custom CSS File-->
     <link rel="stylesheet" href="./style.css" />
+
+  <?php
+    //require functions.php file
+    require ('functions.php');
+  ?>
+
+
   </head>
   <body>
     <!--start #header-->
