@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                     <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                     <?php
-                      if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')))){
+                      if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')) ?? [])){
                         echo '<button
                         type="submit"
                         disabled

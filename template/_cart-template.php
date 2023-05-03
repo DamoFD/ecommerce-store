@@ -18,6 +18,8 @@
     <div class="container">
       <div class="items">
         <?php
+        $cartData = $product->getData('cart');
+        if (!empty($cartData)){
         foreach ($product->getData('cart') as $item) :
           $cart = $product->getProduct($item['item_id']);
           $subTotal[] = array_map(function ($item) {
@@ -83,6 +85,9 @@
             return $item['item_price'];
           }, $cart); // closing array_map function
         endforeach;
+      }else{
+        echo '<p class="font-roboto font-size-20 color-primary">Your shopping cart is empty</p>';
+      }
         ?>
       </div>
       <!--Subtotal Section-->
@@ -93,7 +98,7 @@
             delivery
           </p>
           <h2 class="font-mont font-size-lg color-primary">
-            Subtotal (<?php echo count($product->getData('cart')); ?> items)
+            Subtotal (<?php echo isset($subTotal) ? count($product->getData('cart')) : 0; ?> items)
           </h2>
           <h3 class="font-mont font-size-lg color-primary">
             <span>
