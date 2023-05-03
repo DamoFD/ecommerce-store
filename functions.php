@@ -18,5 +18,4 @@
 
     //Cart Object
     $Cart = new Cart($db);
-
 ?>

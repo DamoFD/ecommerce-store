@@ -39,13 +39,25 @@
                   <form method="post">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                     <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                    <button
-                    type="submit"
-                    name="featured_submit"
-                    class="font-size-20 product-btn color-primary-bg"
-                  >
-                    Add to Cart
-                  </button>
+                    <?php
+                      if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')))){
+                        echo '<button
+                        type="submit"
+                        disabled
+                        class="font-size-20 product-btn color-secondary-bg"
+                      >
+                        Added to Cart
+                      </button>';
+                      }else{
+                        echo '<button
+                        type="submit"
+                        name="featured_submit"
+                        class="font-size-20 product-btn color-primary-bg"
+                      >
+                        Add to Cart
+                      </button>';
+                      }
+                    ?>
                   </form>
                 </div>
               </div>
