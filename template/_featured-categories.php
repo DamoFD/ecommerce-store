@@ -1,4 +1,11 @@
 <!--Featured Categories-->
+
+<?php
+  $category = array_map(function($pro){ return $pro['item_category'];}, $product_shuffle);
+  $unique = array_unique($category);
+  sort($unique);
+?>
+
 <section id="featured-categories">
         <div class="featured-categories__btn-container">
           <h2 class="font-size-xl font-mont color-primary">
@@ -11,18 +18,18 @@
             >
               All
             </button>
-            <button
-              class="btn color-primary-bg font-size-16 font-roboto"
-              data-filter=".men"
-            >
-              Men's
-            </button>
-            <button
-              class="btn color-primary-bg font-size-16 font-roboto"
-              data-filter=".women"
-            >
-              Women's
-            </button>
+            
+            <?php
+              array_map(function($category){
+                printf('<button
+                class="btn color-primary-bg font-size-16 font-roboto"
+                data-filter=".%s"
+              >
+                %s
+              </button>',$category,$category);
+              },$unique);
+            ?>
+
           </div>
         </div>
 
