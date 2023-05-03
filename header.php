@@ -55,7 +55,7 @@
     <header id="header" class="header__main">
       <!--Primary Navigation-->
       <nav class="navbar">
-        <a href="#" rel="home"
+        <a href="index.php" rel="home"
           ><img src="./assets/lss-logo-white.png" class="header-img"
         /></a>
         <div class="menu-toggle" id="mobile-menu">
@@ -78,8 +78,8 @@
           <li class="nav-item nav-right"><a href="#">Wishlist</a></li>
           <li class="nav-item nav-right">
             <form action="#">
-              <a href="#"
-                ><i class="fas fa-shopping-cart"><span>0</span></i></a
+              <a href="cart.php"
+                ><i class="fas fa-shopping-cart"><span><?php echo count($product->getData('cart')); ?></span></i></a
               >
             </form>
           </li>

@@ -9,7 +9,7 @@
               <?php
                 foreach($product->getData('cart') as $item) :
                   $cart = $product->getProduct($item['item_id']);
-                  array_map(function($item){
+                  $subTotal[] = array_map(function($item){
               ?>
               <!--cart item-->
               <div class="item">
@@ -87,6 +87,7 @@
               </div>
               <!--!cart item-->
               <?php
+                return $item['item_price'];
                 },$cart); // closing array_map function
                 endforeach;
               ?>
@@ -98,13 +99,15 @@
                   <i class="fa fa-check"></i>Your order is eligible for FREE
                   delivery
                 </p>
-                <h2 class="font-rale font-size-lg color-primary">
-                  Subtotal (2 items)&nbsp
-                  <span>
-                    $
-                    <span id="deal-price"> 152.00 </span>
-                  </span>
+                <h2 class="font-mont font-size-lg color-primary">
+                  Subtotal (<?php echo count($product->getData('cart')); ?> items)
                 </h2>
+                <h3 class="font-mont font-size-lg color-primary">
+                <span>
+                    $
+                    <span id="deal-price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span>
+                  </span>
+                </h3>
                 <button
                   type="submit"
                   class="font-size-20 color-primary-bg font-roboto checkout-btn"
