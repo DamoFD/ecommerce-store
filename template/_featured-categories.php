@@ -4,6 +4,7 @@
   $category = array_map(function($pro){ return $pro['item_category'];}, $product_shuffle);
   $unique = array_unique($category);
   sort($unique);
+  shuffle($product_shuffle);
 ?>
 
 <section id="featured-categories">
@@ -50,7 +51,7 @@
                   <span><i class="far fa-star"></i></span>
                 </div>
                 <div>
-                  <span class="font-size-20 color-primary"><?php echo $item['item_price'] ?? "0"; ?></span>
+                  <span class="font-size-20 color-primary">$<?php echo $item['item_price'] ?? "0"; ?></span>
                 </div>
                 <button
                   type="submit"

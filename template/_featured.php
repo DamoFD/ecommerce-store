@@ -2,6 +2,7 @@
 
 <?php
   $product_shuffle = $product->getData();
+  shuffle($product_shuffle);
 ?>
 
 
