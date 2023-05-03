@@ -1,12 +1,21 @@
 <!--Product-->
+
+<?php
+
+  $item_id = $_GET['item_id'] ?? 1;
+  foreach($product->getData() as $item) :
+    if($item['item_id'] == $item_id) :
+
+?>
+
 <section id="product">
         <div>
           <div class="row">
             <div class="col">
-              <img src="./assets/products/dress-shirt.jpg" alt="product1" />
+              <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="product1" />
             </div>
             <div class="col">
-              <h1 class="font-mont font-size-xl color-primary">Men's Shirt</h1>
+              <h1 class="font-mont font-size-xl color-primary"><?php echo $item['item_name'] ?? "Unknown"; ?></h1>
               <div class="product-ratings">
                 <div class="font-size-20 color-primary">
                   <span><i class="fas fa-star"></i></span>
@@ -23,7 +32,7 @@
               <!--Product Price-->
               <div class="pricing font-roboto font-size-lg color-primary">
                 <p><strike>$162.00</strike></p>
-                <p class="price">$<span>152.00</span></p>
+                <p class="price">$<span><?php echo $item['item_price'] ?? '0'; ?></span></p>
                 <p class="discount">30% off</p>
               </div>
               <!--!Product Price-->
@@ -104,3 +113,10 @@
         </div>
       </section>
       <!--!Product-->
+
+<?php
+
+    endif;
+  endforeach;
+
+?>

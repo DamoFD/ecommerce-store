@@ -14,7 +14,7 @@
             <?php foreach($product_shuffle as $item) { ?>
             <div class="item">
               <div class="product font-roboto">
-                <a href="#"
+                <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"
                   ><img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="product1"
                 /></a>
                 <div class="product-info">
