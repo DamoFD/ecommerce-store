@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (menuToggle) {
     menuToggle.addEventListener("click", function () {
-      var nav = document.querySelector(".main-nav");
+      var nav = document.querySelector(".nav");
       nav.classList.toggle("mobile-nav");
       this.classList.toggle("is-active");
     });

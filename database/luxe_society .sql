@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2023 at 07:16 AM
+-- Generation Time: May 04, 2023 at 07:37 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,6 +33,13 @@ CREATE TABLE `cart` (
   `item_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
+(21, 1, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -44,19 +51,20 @@ CREATE TABLE `product` (
   `item_name` varchar(255) NOT NULL,
   `item_price` double(10,2) NOT NULL,
   `item_image` varchar(255) NOT NULL,
-  `item_register` date NOT NULL
+  `item_register` date NOT NULL,
+  `item_category` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`item_id`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'Men\'s Shirt', 49.99, './assets/products/dress-shirt.jpg', '2023-05-02'),
-(2, 'Women\'s Jeans', 39.99, './assets/products/womens-jeans.jpg', '2023-05-02'),
-(3, 'Women\'s Dress', 99.99, './assets/products/womens-dress.jpg', '2023-05-02'),
-(4, 'Men\'s Jeans', 49.99, './assets/products/mens-jeans.jpg', '2023-05-02'),
-(5, 'Women\'s Shoes', 89.99, './assets/products/womens-shoes.jpg', '2023-05-02');
+INSERT INTO `product` (`item_id`, `item_name`, `item_price`, `item_image`, `item_register`, `item_category`) VALUES
+(1, 'Men\'s Shirt', 49.99, './assets/products/dress-shirt.jpg', '2023-05-02', 'Men'),
+(2, 'Women\'s Jeans', 39.99, './assets/products/womens-jeans.jpg', '2023-05-02', 'Women'),
+(3, 'Women\'s Dress', 99.99, './assets/products/womens-dress.jpg', '2023-05-02', 'Women'),
+(4, 'Men\'s Jeans', 49.99, './assets/products/mens-jeans.jpg', '2023-05-02', 'Men'),
+(5, 'Women\'s Shoes', 89.99, './assets/products/womens-shoes.jpg', '2023-05-02', 'Women');
 
 -- --------------------------------------------------------
 
@@ -78,6 +86,18 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
 (3, 'Ryan', 'Reynolds', '2023-05-02'),
 (5, 'John', 'Doe', '2023-05-02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -109,7 +129,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `product`
