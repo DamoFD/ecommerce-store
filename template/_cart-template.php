@@ -54,11 +54,11 @@
                 <!--product qty-->
                 <div class="qty">
                   <div class="font-roboto">
-                    <button class="qty-down font-size-20 color-primary" data-id="pro1">
+                    <button class="qty-down font-size-20 color-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fa-solid fa-minus"></i>
                     </button>
-                    <input data-id="pro1" type="text" class="qty-input color-primary font-roboto font-size-20" disabled value="1" placeholder="1" />
-                    <button class="qty-up font-size-20 color-primary" data-id="pro1">
+                    <input data-id="<?php echo $item['item_id'] ?? '0'; ?>" type="text" class="qty-input color-primary font-roboto font-size-20" disabled value="1" placeholder="1" />
+                    <button class="qty-up font-size-20 color-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
@@ -76,7 +76,7 @@
               </div>
               <div class="col">
                 <div class="font-size-lg font-roboto">
-                  $<span class="product__price"><?php echo $item['item_price'] ?? "0"; ?></span>
+                  $<span data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="product_price"><?php echo $item['item_price'] ?? "0"; ?></span>
                 </div>
               </div>
             </div>
