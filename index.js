@@ -165,11 +165,25 @@ $(document).ready(function () {
     const sizeName = $(this).data("size");
     $("p.size-text").text("Size: " + sizeName);
   });
+
+  //registration
+  $("#reg-form").submit(function (event) {
+    let $password = $("#password");
+    let $confirm = $("#confirm_pwd");
+    let $error = $("#confirm_error");
+    if ($password.val() === $confirm.val()) {
+      return true;
+    } else {
+      $error.text("Passwords do not match");
+      event.preventDefault();
+    }
+  })
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   var menuToggle = document.querySelector(".menu-toggle");
 
+  // Mobile Nav Toggle
   if (menuToggle) {
     menuToggle.addEventListener("click", function () {
       var nav = document.querySelector(".nav");
@@ -177,4 +191,5 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.toggle("is-active");
     });
   }
+
 });
