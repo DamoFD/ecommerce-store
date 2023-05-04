@@ -72,9 +72,20 @@ class Cart
     // delete cart item using cart item id
     public function deleteCart($item_id = null, $table = 'cart'){
         if($item_id != null){
-            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+            // Prepare the SQL statement
+            $stmt = $this->db->con->prepare("DELETE FROM {$table} WHERE item_id=?");
+
+            // Bind the parameter
+            $stmt->bind_param('i',$item_id);
+
+            // Execute the prepared statement
+            $result = $stmt->execute();
+
             if($result){
+
+                //refresh page
                 header("Location:" . $_SERVER['PHP_SELF']);
+                exit();
             }
             return $result;
         }
@@ -104,24 +115,49 @@ class Cart
     // wishlist
     public function saveForLater($item_id = null,$saveTable = "wishlist",$fromTable = "cart"){
         if($item_id != null){
-            $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
-            $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
 
-            // execute multiple query
-            $result = $this->db->con->multi_query($query);
-            if($result){
+            // Prepare the INSERT statement
+            $stmt = $this->db->con->prepare("INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id=?;");
+
+            // Bind the parameter
+            $stmt->bind_param('i', $item_id);
+
+            // Execute the prepared statement
+            $result1 = $stmt->execute();
+
+            // Prepare the DELETE statement
+            $stmt = $this->db->con->prepare("DELETE FROM {$fromTable} WHERE item_id=?;");
+
+            // Bind the parameter
+            $stmt->bind_param('i', $item_id);
+
+            // Execute the prepared statement
+            $result2 = $stmt->execute();
+
+            if($result1 && $result2){
                 header("Location: " . $_SERVER['PHP_SELF']);
+                exit();
             }
-            return $result;
+            return $result1 && $result2;
         }
     }
 
     // delete cart item using cart item id
     public function deleteWish($item_id = null, $table = 'wishlist'){
         if($item_id != null){
-            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+            // prepare the SQL statement
+            $stmt = $this->db->con->prepare("DELETE FROM {$table} WHERE item_id=?");
+
+            // Bind the parameter
+            $stmt->bind_param('i',$item_id);
+
+            // Execute the prepared statement
+            $result = $stmt->execute();
+
             if($result){
+                // refresh current page
                 header("Location:" . $_SERVER['PHP_SELF']);
+                exit();
             }
             return $result;
         }
