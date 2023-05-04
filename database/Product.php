@@ -34,8 +34,23 @@ class Product
 
     // get product using item id
     public function getProduct($item_id = null,$table = 'product'){
-        if(isset($item_id)){
-            $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+        // Whitelisted tables
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+        // Check table and item_id
+        if(isset($item_id) && in_array($table, $allowedTables)){
+            // Prepare the SQL statement
+            $stmt = $this->db->con->prepare("SELECT * FROM {$table} WHERE item_id=?");
+
+            // Bind the parameter
+            $stmt->bind_param('i', $item_id);
+
+            // Execute the prepared statement
+            $stmt->execute();
+
+            // Get the result
+            $result = $stmt->get_result();
+
             $resultArray = array();
 
             //fetch product data one by one
@@ -44,6 +59,8 @@ class Product
             }
 
             return $resultArray;
+        }else{
+            return [];
         }
     }
 
