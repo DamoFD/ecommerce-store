@@ -13,6 +13,11 @@ class Product
 
     //fetch product data using getData Method
     public function getData($table = 'product'){
+        // Define whitelist of allowed table names
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+        // Check if provided table is in allowed list
+        if (in_array($table, $allowedTables)){
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
@@ -22,7 +27,10 @@ class Product
         }
 
         return $resultArray;
+    } else {
+        return [];
     }
+}
 
     // get product using item id
     public function getProduct($item_id = null,$table = 'product'){
