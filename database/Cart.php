@@ -81,6 +81,21 @@ class Cart
         }
     }
 
+    // save for later
+    public function saveForLater($item_id = null,$saveTable = "wishlist",$fromTable = "cart"){
+        if($item_id != null){
+            $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
+            $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
+
+            // execute multiple query
+            $result = $this->db->con->multi_query($query);
+            if($result){
+                header("Location: " . $_SERVER['PHP_SELF']);
+            }
+            return $result;
+        }
+    }
+
 }
 
 ?>

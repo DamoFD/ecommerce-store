@@ -5,12 +5,6 @@
 ?>
 
 <?php
-    /* include cart template */
-    include('template/_cart-template.php');
-    /* include cart template */
-?>
-
-<?php
     /* include wishlist template */
     include ('template/_wishlist_template.php');
     /* include wishlist template */

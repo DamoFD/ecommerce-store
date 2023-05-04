@@ -6,6 +6,11 @@
     if(isset($_POST['remove-cart-submit'])){
       $deletedrecord = $Cart->deleteCart($_POST['item_id']);
     }
+
+    // save for later
+    if (isset($_POST['wishlist-submit'])){
+      $Cart->saveForLater($_POST['item_id']);
+    }
   }
 
 ?>
@@ -62,9 +67,12 @@
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
-                  <button type="submit" class="font-roboto btn font-size-20 color-primary">
+                  <form method="post">
+                    <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 0; ?>">
+                    <button type="submit" name="wishlist-submit" class="font-roboto btn font-size-20 color-primary">
                     Save for Later
                   </button>
+                  </form>
                   <form method="post">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 0; ?>">
                     <button type="submit" name="remove-cart-submit" class="font-roboto btn font-size-20 color-primary">
