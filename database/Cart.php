@@ -43,9 +43,18 @@ class Cart
             //insert data into cart
             $result = $this->insertIntoCart($params);
             if($result){
-                // Reload page
+                // Check if the current page is the product page
+                $currentPage = basename($_SERVER['PHP_SELF']);
+                $productPage = 'product.php';
+
+                if($currentPage == $productPage) {
+                    // Reload product page with query parameters
+                    header("Location:" . $_SERVER['PHP_SELF'] . "?item_id=" . $itemid);
+                }else{
+                    // Reload page without query parameters
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
+        }
         }
     }
 
@@ -81,7 +90,7 @@ class Cart
         }
     }
 
-    // save for later
+    // wishlist
     public function saveForLater($item_id = null,$saveTable = "wishlist",$fromTable = "cart"){
         if($item_id != null){
             $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
@@ -96,6 +105,15 @@ class Cart
         }
     }
 
-}
+    // delete cart item using cart item id
+    public function deleteWish($item_id = null, $table = 'wishlist'){
+        if($item_id != null){
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+            if($result){
+                header("Location:" . $_SERVER['PHP_SELF']);
+            }
+            return $result;
+        }
+    }
 
-?>
+}

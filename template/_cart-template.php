@@ -2,6 +2,7 @@
 
 <?php
 
+  // delete cart item
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST['remove-cart-submit'])){
       $deletedrecord = $Cart->deleteCart($_POST['item_id']);
@@ -70,7 +71,7 @@
                   <form method="post">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 0; ?>">
                     <button type="submit" name="wishlist-submit" class="font-roboto btn font-size-20 color-primary">
-                    Save for Later
+                    Add to Wishlist
                   </button>
                   </form>
                   <form method="post">
