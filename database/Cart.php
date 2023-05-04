@@ -12,9 +12,11 @@ class Cart
     }
 
     //insert into cart table
-    public function insertIntoCart($params = null, $table = "cart")
-{
-    if ($this->db->con != null) {
+    public function insertIntoCart($params = null, $table = "cart"){
+        // whitelisted tables
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+    if ($this->db->con != null && $params != null && in_array($table, $allowedTables)) {
         if ($params != null) {
             // Get table columns
             $columns = implode(',', array_keys($params));
@@ -71,7 +73,10 @@ class Cart
 
     // delete cart item using cart item id
     public function deleteCart($item_id = null, $table = 'cart'){
-        if($item_id != null){
+        // whitelisted tables
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+        if($item_id != null && in_array($table, $allowedTables)){
             // Prepare the SQL statement
             $stmt = $this->db->con->prepare("DELETE FROM {$table} WHERE item_id=?");
 
@@ -114,7 +119,10 @@ class Cart
 
     // wishlist
     public function saveForLater($item_id = null,$saveTable = "wishlist",$fromTable = "cart"){
-        if($item_id != null){
+        // whitelisted tables
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+        if($item_id != null && in_array($saveTable, $allowedTables) && in_array($fromTable, $allowedTables)){
 
             // Prepare the INSERT statement
             $stmt = $this->db->con->prepare("INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id=?;");
@@ -144,7 +152,10 @@ class Cart
 
     // delete cart item using cart item id
     public function deleteWish($item_id = null, $table = 'wishlist'){
-        if($item_id != null){
+        // whitelisted tables
+        $allowedTables = ['product', 'wishlist', 'cart', 'user'];
+
+        if($item_id != null && in_array($table, $allowedTables)){
             // prepare the SQL statement
             $stmt = $this->db->con->prepare("DELETE FROM {$table} WHERE item_id=?");
 
