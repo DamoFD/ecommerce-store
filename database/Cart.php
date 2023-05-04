@@ -12,25 +12,35 @@ class Cart
     }
 
     //insert into cart table
-    public function insertIntoCart($params = null,$table = "cart"){
-        if($this->db->con != null) {
-            if($params != null) {
-                // insert into cart(user_id) values (0)
-                // get table columns
-                $columns = implode(',',array_keys($params));
-                print_r($columns);
-                $values = implode(',', array_values($params));
-                print_r($values);
+    public function insertIntoCart($params = null, $table = "cart")
+{
+    if ($this->db->con != null) {
+        if ($params != null) {
+            // Get table columns
+            $columns = implode(',', array_keys($params));
 
-                // create sql query
-                $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)",$table,$columns,$values);
+            // Prepare placeholders for values
+            $placeholders = implode(',', array_fill(0, count($params), '?'));
 
-                // execute query
-                $result = $this->db->con->query($query_string);
-                return $result;
-            }
+            // Create SQL query
+            $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $placeholders);
+
+            // Prepare statement
+            $stmt = $this->db->con->prepare($query_string);
+
+            // Bind parameters
+            $types = str_repeat('i', count($params));
+            $values = array_values($params);
+            $stmt->bind_param($types, ...$values);
+
+            // Execute query
+            $result = $stmt->execute();
+
+            return $result;
         }
     }
+}
+
 
     // get user_id and item_id and insert into cart table
     public function addToCart($userid, $itemid){
@@ -54,6 +64,7 @@ class Cart
                     // Reload page without query parameters
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
+            exit();
         }
         }
     }
