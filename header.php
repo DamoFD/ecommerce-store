@@ -57,7 +57,7 @@
         <li class="nav-item nav-right"><a href="wishlist.php">Wishlist</a></li>
         <li class="nav-item nav-right">
           <form action="#">
-            <a href="cart.php"><i class="fas fa-shopping-cart"><span><?php echo count($Cart->getCartData($currentUser['user_id'])); ?></span></i></a>
+            <a href="cart.php"><i class="fas fa-shopping-cart"><span><?php echo isset($currentUser) && array_key_exists('user_id', $currentUser) ? count($Cart->getCartData($currentUser['user_id'])) : 0; ?></span></i></a>
           </form>
         </li>
       </ul>

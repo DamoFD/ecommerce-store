@@ -19,7 +19,7 @@
     }
   }
 
-  $in_cart = $Cart->getCartId($product->getData('cart'));
+  $in_cart = isset($currentUser) && array_key_exists('user_id', $currentUser) ? $Cart->getCartId($Cart->getCartData($currentUser['user_id'])) : [];
 ?>
 
 <section id="featured-categories">

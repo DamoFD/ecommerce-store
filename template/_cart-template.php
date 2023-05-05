@@ -24,6 +24,7 @@
     <div class="container">
       <div class="items">
         <?php
+        if (!empty($currentUser)){
         $cartData = $Cart->getCartData($currentUser['user_id']);
         if (!empty($cartData)){
         foreach ($Cart->getCartData($currentUser['user_id']) as $item) :
@@ -97,6 +98,9 @@
       }else{
         echo '<p class="font-roboto font-size-20 color-primary">Your shopping cart is empty</p>';
       }
+    }else{
+      echo '<p class="font-robot font-size-20 color-primary">Please log in to view your cart</p>';
+    }
         ?>
       </div>
       <!--Subtotal Section-->

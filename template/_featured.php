@@ -45,7 +45,7 @@
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                     <input type="hidden" name="user_id" value="<?php echo $currentUser['user_id'] ?? '0'; ?>">
                     <?php
-                      if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')) ?? [])){
+                      if(isset($currentUser) && array_key_exists('user_id', $currentUser) && in_array($item['item_id'],$Cart->getCartId($Cart->getCartData($currentUser['user_id'])) ?? [])){
                         echo '<button
                         type="submit"
                         disabled

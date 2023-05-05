@@ -95,7 +95,9 @@ class Cart
             // Fetch data as an associative array
             $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-            return empty($rows) ? false : $rows;
+            return empty($rows) ? [] : $rows;
+        }else{
+            return [];
         }
     }
 
