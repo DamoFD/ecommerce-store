@@ -36,4 +36,10 @@
 
     //User Object
     $User = new User($db);
+
+    //Get Current User
+    $currentUser = array();
+    if(isset($_SESSION['user_id'])){
+        $currentUser = $User->getUserInfo($_SESSION['user_id']);
+    }
 ?>

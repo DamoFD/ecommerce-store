@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="./style.css" />
 
   <?php
+  // Start Session
+  session_start();
+
   //require functions.php file
   require('functions.php');
   ?>

@@ -1,13 +1,5 @@
 <?php
 
-  session_start();
-
-  $currentUser = array();
-
-  if(isset($_SESSION['user_id'])){
-    $currentUser = $User->getUserInfo($_SESSION['user_id']);
-  }
-
   // request method post
   if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(isset($_POST['login_submit'])){
