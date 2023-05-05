@@ -9,6 +9,9 @@
     //require Cart Class
     require('database/Cart.php');
 
+    //require User Class
+    require('database/User.php');
+
     //DBController Object
     $db = new DBController();
 
@@ -18,4 +21,7 @@
 
     //Cart Object
     $Cart = new Cart($db);
+
+    //User Object
+    $User = new User($db);
 ?>

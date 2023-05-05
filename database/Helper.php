@@ -1,23 +1,26 @@
 <?php
 
-    function validate_input_text($textValue){
-        if(!empty($textValue)){
+// Helper class
+class Helper {
+    public static function validate_input_text($textValue) {
+        if (!empty($textValue)) {
             $trim_text = trim($textValue);
-            // remove illegal characters
+            // Remove illegal characters
             $sanitize_str = filter_var($trim_text, FILTER_SANITIZE_SPECIAL_CHARS);
             return $sanitize_str;
         }
         return '';
     }
 
-    function validate_input_email($emailValue){
-        if(!empty($emailValue)){
+    public static function validate_input_email($emailValue) {
+        if (!empty($emailValue)) {
             $trim_text = trim($emailValue);
-            // remove illegal characters
+            // Remove illegal characters
             $sanitize_str = filter_var($trim_text, FILTER_SANITIZE_EMAIL);
             return $sanitize_str;
         }
         return '';
     }
+}
 
 ?>

@@ -1,7 +1,11 @@
 <?php
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        require ('./register/register-process.php');
+    // request method post
+  if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_POST['register_submit'])){
+      // call method registerUser
+      $User->registerUser($_POST);
     }
+  }
 ?>
 
 <!-- register section -->
@@ -11,15 +15,15 @@
 
     <!-- Register Form -->
     <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
-        <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
-        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
-        <input type="email" name="email" placeholder="Email" id="email" required>
-        <input type="password" name="pasword" id="password" placeholder="Password" required>
+        <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" name="firstName" id="firstName" placeholder="First Name" required>
+        <input type="text" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" name="lastName" id="lastName" placeholder="Last Name" required>
+        <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" name="email" placeholder="Email" id="email" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
         <input type="password" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm Password" required>
         <small id="confirm_error"></small>
         <input type="checkbox" name="agreement" id="agreement" required>
         <label for="agreement">I agree to the <a href="#">terms, conditions, and policy</a> (*)</label>
-        <button type="submit">Register</button>
+        <button name="register_submit" type="submit">Register</button>
     </form>
     <!-- !Register Form -->
 </section>
