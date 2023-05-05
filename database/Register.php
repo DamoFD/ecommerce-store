@@ -64,9 +64,6 @@ class Register
 
             if(mysqli_stmt_affected_rows($stmt) == 1){
 
-                // Start a New Session
-                session_start();
-
                 // Create Session Variable
                 $_SESSION['user_id'] = mysqli_insert_id($this->db->con);
                 

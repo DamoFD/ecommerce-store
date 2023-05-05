@@ -50,6 +50,10 @@ class Login
             if ($row) {
                 // Verify password
                 if (password_verify($password, $row['password'])) {
+
+                    // Create Session Variable
+                    $_SESSION['user_id'] = $row['user_id'];
+
                     header("Location: index.php");
                     exit();
                 } else {
