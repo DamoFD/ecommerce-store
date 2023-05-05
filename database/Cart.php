@@ -71,6 +71,34 @@ class Cart
         }
     }
 
+    // Get Cart Data With user_id
+    public function getCartData($userid = null){
+
+        //Check if user_id is valid
+        if($userid != null){
+
+            // Create SQL Statement
+            $query_string = "SELECT * FROM cart WHERE user_id=?";
+
+            // Prepare Statement
+            $stmt = $this->db->con->prepare($query_string);
+
+            // Bind Parameters
+            $stmt->bind_param('i', $userid);
+
+            // Execute Query
+            $stmt->execute();
+
+            // Get Result
+            $result = $stmt->get_result();
+
+            // Fetch data as an associative array
+            $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+            return empty($rows) ? false : $rows;
+        }
+    }
+
     // delete cart item using cart item id
     public function deleteCart($item_id = null, $table = 'cart'){
         // whitelisted tables

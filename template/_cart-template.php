@@ -24,9 +24,9 @@
     <div class="container">
       <div class="items">
         <?php
-        $cartData = $product->getData('cart');
+        $cartData = $Cart->getCartData($currentUser['user_id']);
         if (!empty($cartData)){
-        foreach ($product->getData('cart') as $item) :
+        foreach ($Cart->getCartData($currentUser['user_id']) as $item) :
           $cart = $product->getProduct($item['item_id']);
           $subTotal[] = array_map(function ($item) {
         ?>

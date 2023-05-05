@@ -15,7 +15,7 @@
         public function getUserInfo($user_id){
             if($this->db->con != null){
                 // Create SQL Query
-                $query_string = "SELECT first_name, last_name, email FROM user WHERE user_id=?";
+                $query_string = "SELECT user_id, first_name, last_name, email FROM user WHERE user_id=?";
 
                 // Prepare Statement
                 $stmt = $this->db->con->prepare($query_string);
