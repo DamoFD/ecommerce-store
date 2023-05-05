@@ -3,7 +3,7 @@
   if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(isset($_POST['register_submit'])){
       // call method registerUser
-      $User->registerUser($_POST);
+      $Register->registerUser($_POST);
     }
   }
 ?>

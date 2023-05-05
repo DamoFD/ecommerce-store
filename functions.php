@@ -9,8 +9,14 @@
     //require Cart Class
     require('database/Cart.php');
 
+    //require Register Class
+    require('database/Register.php');
+
+    //require Login Class
+    require ('database/Login.php');
+
     //require User Class
-    require('database/User.php');
+    require ('database/User.php');
 
     //DBController Object
     $db = new DBController();
@@ -21,6 +27,12 @@
 
     //Cart Object
     $Cart = new Cart($db);
+
+    //Register Object
+    $Register = new Register($db);
+
+    //Login Object
+    $Login = new Login($db);
 
     //User Object
     $User = new User($db);

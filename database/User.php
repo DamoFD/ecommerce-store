@@ -1,9 +1,9 @@
 <?php
 
-//php User class
-class User
-{
-    public $db = null;
+    // User Class
+    class User
+    {
+        public $db = null;
 
     public function __construct(DBController $db)
     {
@@ -11,68 +11,30 @@ class User
         $this->db = $db;
     }
 
-    //validate user credentials
-    public function registerUser($data){
-        require ('Helper.php');
+        // Get User Data With ID
+        public function getUserInfo($user_id){
+            if($this->db->con != null){
+                // Create SQL Query
+                $query_string = "SELECT first_name, last_name, email FROM user WHERE user_id=?";
 
-        //error variable
-        $error = array();
+                // Prepare Statement
+                $stmt = $this->db->con->prepare($query_string);
 
-        $firstName = Helper::validate_input_text($data['firstName']);
-        if(empty($firstName)){
-            $error[] = "Please enter your first name";
-        }
+                // Bind Parameters
+                $stmt->bind_param('i', $user_id);
 
-        $lastName = Helper::validate_input_text($data['lastName']);
-        if(empty($lastName)){
-            $error[] = "Please enter your last name";
-        }
+                // Execute Query
+                $stmt->execute();
 
-        $email = Helper::validate_input_email($data['email']);
-        if(empty($email)){
-            $error[] = "Please enter your email";
-        }
+                // Get Result
+                $result = $stmt->get_result();
 
-        $password = Helper::validate_input_text($data['password']);
-        if(empty($password)){
-            $error[] = "Please enter a password";
-        }
+                // Fetch data as an associative array
+                $row = $result->fetch_assoc();
 
-        $confirm_pwd = Helper::validate_input_text($data['confirm_pwd']);
-        if(empty($confirm_pwd)){
-            $error[] = "Please confirm your password";
-        }
-
-        if($this->db->con != null && empty($error)){
-            // Register new user
-            $hashed_pass = password_hash($password,PASSWORD_DEFAULT);
-
-            // Create SQL query
-            $query_string = "INSERT INTO user (first_name, last_name, email, password, register_date)";
-            $query_string .= "VALUES(?,?,?,?,NOW())";
-
-            // Prepare Statement
-            $stmt = $this->db->con->prepare($query_string);
-
-            // Bind Parameters
-            $types = 'ssss';
-            $values = array($firstName, $lastName, $email, $hashed_pass);
-            $stmt->bind_param($types, ...$values);
-
-            // Execute Query
-            $result = $stmt->execute();
-
-            if(mysqli_stmt_affected_rows($stmt) == 1){
-                print "record successfully inserted!";
-            }else{
-                print "Error while registering";
+                return empty($row) ? false : $row;
             }
-            
-        }else{
-            echo 'not validate';
         }
-
-        return $error;
     }
-}
+
 ?>
