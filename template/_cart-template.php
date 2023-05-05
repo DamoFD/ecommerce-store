@@ -119,8 +119,8 @@
               <span id="deal-price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span>
             </span>
           </h3>
-          <button type="submit" class="font-size-20 color-primary-bg font-roboto checkout-btn">
-            Proceed to Checkout
+          <button id="stripe-btn" type="submit" class="font-size-20 color-primary-bg font-roboto checkout-btn">
+            Checkout With Stripe
           </button>
         </div>
       </div>

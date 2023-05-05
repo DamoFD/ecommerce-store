@@ -192,4 +192,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
+  const btn = document.querySelector('#stripe-btn');
+  btn.addEventListener('click', () => {
+    fetch('./database/Checkout.php', {
+      method: "POST",
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+      body: JSON.stringify({})
+    }).then(res => res.json())
+    .then(payload => {
+      stripe.redirectToCheckout({sessionId: payload.id})
+    })
+  })
+
 });

@@ -107,6 +107,9 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+
     <!--Custom Javascript-->
     <script src="./index.js"></script>
   </body>
