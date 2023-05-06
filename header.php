@@ -53,7 +53,7 @@
           <a href="#">Category<i class="fas fa-chevron-down"></i></a>
         </li>
         <li class="nav-item"><a href="#">Coming Soon</a></li>
-        <li class="nav-item nav-right"><a href="#">Login</a></li>
+        <li class="nav-item nav-right"><a href="login.php">Login</a></li>
         <li class="nav-item nav-right"><a href="wishlist.php">Wishlist</a></li>
         <li class="nav-item nav-right">
           <form action="#">

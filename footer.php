@@ -110,6 +110,13 @@
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
 
+    <!-- Global User JS variable -->
+    <?php if(isset($currentUser['user_id'])):?>
+      <script>
+        const currentUserId = <?php echo $currentUser['user_id']; ?>;
+      </script>
+    <?php endif; ?>
+
     <!--Custom Javascript-->
     <script src="./index.js"></script>
   </body>

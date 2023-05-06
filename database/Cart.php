@@ -101,6 +101,33 @@ class Cart
         }
     }
 
+    public function updateCartQuantity($userId = null, $itemId = null, $newQuantity = 1){
+
+        // Check if Params are valid
+        if($userId != null && $itemId != null) {
+            // Create SQL Statement
+            $query_string = "UPDATE cart SET quantity=? WHERE item_id=? && user_id=?";
+
+            // Prepare Statement
+            $stmt = $this->db->con->prepare($query_string);
+
+            // Bind Parameters
+            $types = 'iii';
+            $values = array($newQuantity, $itemId, $userId);
+            $stmt->bind_param($types, ...$values);
+
+            // Execute Query
+            $result = $stmt->execute();
+
+            // Return the Result
+            return $result;
+
+        }else{
+            // Return False if the parameters are not valid
+            return false;
+        }
+    }
+
     // delete cart item using cart item id
     public function deleteCart($item_id = null, $table = 'cart'){
         // whitelisted tables

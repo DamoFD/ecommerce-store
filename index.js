@@ -93,12 +93,25 @@ $(document).ready(function () {
     let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
     let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
 
+    console.log("Data sent:", {
+      updateCart: true,
+      itemid: $(this).data("id"),
+      userid: currentUserId,
+      new_quantity: parseInt($input.val()) + 1
+    });
     // change product price using ajax call
     $.ajax({
       url: "template/ajax.php",
       type: "post",
-      data: { itemid: $(this).data("id") },
+      data: {
+        getitem: true,
+        updateCart: true,
+        itemid: $(this).data("id"),
+        userid: currentUserId,
+        new_quantity: parseInt($input.val()) + 1
+      },
       success: function (result) {
+        console.log('AJAX response: ', result);
         let obj = JSON.parse(result);
         let item_price = obj[0]["item_price"];
 
@@ -123,12 +136,26 @@ $(document).ready(function () {
     let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
     let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
 
+    console.log("Data sent:", {
+      updateCart: true,
+      itemid: $(this).data("id"),
+      userid: currentUserId,
+      new_quantity: parseInt($input.val()) - 1
+    });
+
     // change product price using ajax call
     $.ajax({
       url: "template/ajax.php",
       type: "post",
-      data: { itemid: $(this).data("id") },
+      data: {
+        getitem: true,
+        updateCart: true,
+        itemid: $(this).data("id"),
+        userid: currentUserId,
+      new_quantity: parseInt($input.val()) - 1
+    },
       success: function (result) {
+        console.log(result);
         let obj = JSON.parse(result);
         let item_price = obj[0]["item_price"];
 
@@ -192,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Stripe Checkout Submission
   const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
   const btn = document.querySelector('#stripe-btn');
   btn.addEventListener('click', () => {

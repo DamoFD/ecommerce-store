@@ -29,7 +29,7 @@
         if (!empty($cartData)){
         foreach ($Cart->getCartData($currentUser['user_id']) as $item) :
           $cart = $product->getProduct($item['item_id']);
-          $subTotal[] = array_map(function ($item) {
+          $subTotal[] = array_map(function ($item) use($cartData) {
         ?>
             <!--cart item-->
             <div class="item">
@@ -42,7 +42,7 @@
                     <?php echo $item['item_name'] ?? "Unknown" ?>
                   </h2>
                   <p class="font-roboto font-size-16 color-primary">
-                    Pearl White | M
+                    <?php echo $cartData[0]['color'] . ' | ' . $cartData[0]['size'] ?? 'Pearl White | M'; ?>
                   </p>
                   <!--product rating-->
                   <div>
@@ -64,7 +64,7 @@
                     <button class="qty-down font-size-20 color-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fa-solid fa-minus"></i>
                     </button>
-                    <input data-id="<?php echo $item['item_id'] ?? '0'; ?>" type="text" class="qty-input color-primary font-roboto font-size-20" disabled value="1" placeholder="1" />
+                    <input data-id="<?php echo $item['item_id'] ?? '0'; ?>" type="text" class="qty-input color-primary font-roboto font-size-20" disabled value="<?php echo $cartData[0]['quantity'] ?? '5'; ?>" placeholder="1" />
                     <button class="qty-up font-size-20 color-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fa-solid fa-plus"></i>
                     </button>
