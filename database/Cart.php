@@ -31,7 +31,7 @@ class Cart
             $stmt = $this->db->con->prepare($query_string);
 
             // Bind parameters
-            $types = str_repeat('i', count($params));
+            $types = 'iiss';
             $values = array_values($params);
             $stmt->bind_param($types, ...$values);
 
@@ -45,11 +45,13 @@ class Cart
 
 
     // get user_id and item_id and insert into cart table
-    public function addToCart($userid, $itemid){
+    public function addToCart($userid, $itemid, $color, $size){
         if(isset($userid) && isset($itemid)){
             $params = array(
                 "user_id" => $userid,
-                "item_id" => $itemid
+                "item_id" => $itemid,
+                "color" => $color,
+                "size" => $size
             );
 
             //insert data into cart
@@ -71,35 +73,37 @@ class Cart
         }
     }
 
-    // Get Cart Data With user_id
-    public function getCartData($userid = null){
+    // Get Cart Data With user_id and map with product details
+public function getCartData($userid = null){
 
-        //Check if user_id is valid
-        if($userid != null){
+    //Check if user_id is valid
+    if($userid != null){
 
-            // Create SQL Statement
-            $query_string = "SELECT * FROM cart WHERE user_id=?";
+        // Create SQL Statement
+        $query_string = "SELECT c.*, p.item_name, p.item_price, p.item_image, c.color, c.size FROM cart c INNER JOIN product p ON c.item_id = p.item_id WHERE c.user_id=?";
 
-            // Prepare Statement
-            $stmt = $this->db->con->prepare($query_string);
+        // Prepare Statement
+        $stmt = $this->db->con->prepare($query_string);
 
-            // Bind Parameters
-            $stmt->bind_param('i', $userid);
+        // Bind Parameters
+        $stmt->bind_param('i', $userid);
 
-            // Execute Query
-            $stmt->execute();
+        // Execute Query
+        $stmt->execute();
 
-            // Get Result
-            $result = $stmt->get_result();
+        // Get Result
+        $result = $stmt->get_result();
 
-            // Fetch data as an associative array
-            $rows = $result->fetch_all(MYSQLI_ASSOC);
+        // Fetch data as an associative array
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-            return empty($rows) ? [] : $rows;
-        }else{
-            return [];
-        }
+        return empty($rows) ? [] : $rows;
+    }else{
+        return [];
     }
+}
+
+
 
     public function updateCartQuantity($userId = null, $itemId = null, $newQuantity = 1){
 

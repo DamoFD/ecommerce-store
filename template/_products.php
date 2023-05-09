@@ -11,7 +11,7 @@ foreach ($product->getData() as $item) :
       if (isset($_POST['product_submit'])) {
         if (isset($currentUser['user_id'])) {
         // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+        $Cart->addToCart($_POST['user_id'], $_POST['item_id'], $_POST['color'], $_POST['size']);
         }else{
           header('Location: login.php');
           exit();
@@ -91,6 +91,8 @@ foreach ($product->getData() as $item) :
               <form method="post">
                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                 <input type="hidden" name="user_id" value="<?php echo $currentUser['user_id'] ?? '0'; ?>">
+                <input type="hidden" name="color" id="color_input" value="White">
+                <input type="hidden" name="size" id="size_input" value="M">
                 <?php
                 if (isset($currentUser) && array_key_exists('user_id', $currentUser) && in_array($item['item_id'], $Cart->getCartId($Cart->getCartData($currentUser['user_id'])) ?? [])) {
                   echo '<button

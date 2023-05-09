@@ -1,5 +1,29 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
+require ('../functions.php');
+
+    $cartData = $Cart->getCartData($currentUser['user_id']);
+
+    $line_items = [];
+
+    foreach($cartData as $item){
+        $line_items[] = [
+            "price_data" => [
+                "currency" => "usd",
+                "product_data" => [
+                    "name" => $item['item_name'],
+                    "description" => $item['color'] . " | " . $item['size']
+                ],
+                "unit_amount" => $item['item_price'] * 100
+            ],
+            "quantity" => $item['quantity']
+        ];
+    }
+
     // Stripe Payments
     require '../vendor/autoload.php';
     require_once '../config/stripe_config.php';
@@ -11,31 +35,7 @@
         "cancel_url" => "http://localhost/ecommerce-site/cancel.php",
         "payment_method_types" => ['card'],
         "mode" => "payment",
-        "line_items" => [
-            [
-                "price_data" => [
-                    "currency" =>"usd",
-                    "product_data" =>[
-                        "name" => "Mobile",
-                        "description" => "Lorem ipsum"
-                    ],
-                    "unit_amount" => 5000
-                ],
-                "quantity" => 1
-            ],
-
-            [
-                "price_data" => [
-                    "currency" => "usd",
-                    "product_data" => [
-                        "name" => "Shirt",
-                        "description" => "ipsum lorem"
-                    ],
-                    "unit_amount" => 2000
-                ],
-                "quantity" => 2
-            ]
-        ]
+        "line_items" => $line_items
     ]);
 
     echo json_encode($session);

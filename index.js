@@ -119,13 +119,6 @@ $(document).ready(function () {
           $input.val(function (i, oldval) {
             return ++oldval;
           });
-
-          //increase price of the product
-          $price.text(parseInt(item_price * $input.val()).toFixed(2));
-
-          // set subtotal price
-          let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
-          $deal_price.text(subtotal.toFixed(2));
         }
       },
     }); // closing ajax request
@@ -163,13 +156,6 @@ $(document).ready(function () {
           $input.val(function (i, oldval) {
             return --oldval;
           });
-
-          //increase price of the product
-          $price.text(parseInt(item_price * $input.val()).toFixed(2));
-
-          // set subtotal price
-          let subtotal = parseInt($deal_price.text()) - parseInt(item_price);
-          $deal_price.text(subtotal.toFixed(2));
         }
       },
     }); // closing ajax request
@@ -182,6 +168,10 @@ $(document).ready(function () {
 
     const colorName = $(this).data("color-name");
     $("p.color-text").text("Color: " + colorName);
+    console.log(colorName);
+
+    // Update input field
+    $("#color_input").attr('value', colorName);
   });
 
   //size picker
@@ -191,6 +181,10 @@ $(document).ready(function () {
 
     const sizeName = $(this).data("size");
     $("p.size-text").text("Size: " + sizeName);
+    console.log(sizeName)
+
+    // Update input field
+    $("#size_input").attr('value', sizeName);
   });
 
   //registration
