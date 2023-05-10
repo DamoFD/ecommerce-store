@@ -467,6 +467,20 @@ input, input:focus {
   cursor: pointer;
   background-color: rgb(27, 27, 27);
 }
+@media only screen and (max-width: 900px) {
+  #featured-categories .featured-categories__btn-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #featured-categories .button-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  #featured-categories .grid .grid-item {
+    width: calc(100% - 40px);
+  }
+}
 
 #banner_ads {
   display: flex;
@@ -474,6 +488,16 @@ input, input:focus {
 }
 #banner_ads img {
   width: 50%;
+}
+@media only screen and (max-width: 900px) {
+  #banner_ads {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
+#banner_ads img {
+  width: 100%;
+  margin-top: 20px;
 }
 
 #blogs h2 {
@@ -492,6 +516,17 @@ input, input:focus {
 }
 #blogs p {
   margin: 20px 0;
+}
+@media only screen and (max-width: 900px) {
+  #blogs h2 {
+    text-align: center;
+  }
+  #blogs .card {
+    flex-direction: column;
+  }
+  #blogs .col {
+    width: calc(100% - 40px);
+  }
 }
 
 #footer {
@@ -536,6 +571,18 @@ input, input:focus {
 #footer .copyrights {
   text-align: center;
   margin-top: 100px;
+}
+@media only screen and (max-width: 900px) {
+  #footer .footer-container .row {
+    flex-direction: column;
+  }
+  #footer .footer-container .col {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
+  #footer form button {
+    margin-left: 20px;
+  }
 }
 
 #cart {
