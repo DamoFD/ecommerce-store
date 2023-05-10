@@ -4,27 +4,27 @@
           <div class="item">
             <div class="item-header">
               <h2 class="font-mont font-size-xl">Summer Shopping</h2>
-              <button class="font-roboto font-size-lg banner-btn">
+              <a href="featured.php" class="font-roboto font-size-lg banner-btn">
                 SHOP NOW
-              </button>
+              </a>
             </div>
             <img src="./assets/bannerImg1.png" alt="Banner1" />
           </div>
           <div class="item">
             <div class="item-header">
               <h2 class="font-mont font-size-xl">Spring Time Apparel</h2>
-              <button class="font-roboto font-size-lg banner-btn">
+              <a href="featured.php" class="font-roboto font-size-lg banner-btn">
                 SHOP NOW
-              </button>
+              </a>
             </div>
             <img src="./assets/bannerImg2.png" alt="Banner2" />
           </div>
           <div class="item">
             <div class="item-header">
               <h2 class="font-mont font-size-xl">Mother's Day Special</h2>
-              <button class="font-roboto font-size-lg banner-btn">
+              <a href="featured.php" class="font-roboto font-size-lg banner-btn">
                 SHOP NOW
-              </button>
+              </a>
             </div>
             <img src="./assets/bannerImg3.png" alt="Banner3" />
           </div>
