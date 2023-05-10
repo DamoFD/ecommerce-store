@@ -23,11 +23,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="container">
             <div class="items">
                 <?php
-                $wishlistData = $product->getData('wishlist');
+                if (!empty ($currentUser)) {
+                $wishlistData = $Cart->getWishlistData($currentUser['user_id']);
                 if (!empty($wishlistData)) {
-                    foreach ($product->getData('wishlist') as $item) :
-                        $cart = $product->getProduct($item['item_id']);
-                        $subTotal[] = array_map(function ($item) {
+                    foreach ($wishlistData as $item) :
                 ?>
                             <!--cart item-->
                             <div class="item">
@@ -40,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                             <?php echo $item['item_name'] ?? "Unknown" ?>
                                         </h2>
                                         <p class="font-roboto font-size-16 color-primary">
-                                            Pearl White | M
+                                            <?php echo $item['color'] . ' | ' . $item['size'] ?? 'Pearl White | M'; ?>
                                         </p>
                                         <!--product rating-->
                                         <div>
@@ -80,14 +79,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 </div>
                             </div>
                             <!--!cart item-->
-                <?php
-                            return $item['item_price'];
-                        }, $cart); // closing array_map function
-                    endforeach;
-                } else {
-                    echo '<p class="font-roboto font-size-20 color-primary">Your wishlist is empty</p>';
-                }
-                ?>
+                            <?php
+            endforeach;
+          } else {
+            echo '<p class="font-roboto font-size-20 color-primary">Your wishlist is empty</p>';
+          }
+        } else {
+          echo '<p class="font-robot font-size-20 color-primary">Please log in to view your wishlist</p>';
+        }
+        ?>
             </div>
         </div>
         <!--!shopping cart items-->

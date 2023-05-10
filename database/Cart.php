@@ -236,4 +236,34 @@ public function getCartData($userid = null){
         }
     }
 
+    // Get Wishlist Data With user_id and map with product details
+public function getWishlistData($userid = null){
+
+    //Check if user_id is valid
+    if($userid != null){
+
+        // Create SQL Statement
+        $query_string = "SELECT w.*, p.item_name, p.item_price, p.item_image, w.color, w.size FROM wishlist w INNER JOIN product p ON w.item_id = p.item_id WHERE w.user_id=?";
+
+        // Prepare Statement
+        $stmt = $this->db->con->prepare($query_string);
+
+        // Bind Parameters
+        $stmt->bind_param('i', $userid);
+
+        // Execute Query
+        $stmt->execute();
+
+        // Get Result
+        $result = $stmt->get_result();
+
+        // Fetch data as an associative array
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+        return empty($rows) ? [] : $rows;
+    }else{
+        return [];
+    }
+}
+
 }
