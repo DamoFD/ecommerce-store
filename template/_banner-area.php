@@ -8,6 +8,7 @@
                 SHOP NOW
               </a>
             </div>
+            <div class="mobile-cover"></div>
             <img src="./assets/bannerImg1.png" alt="Banner1" />
           </div>
           <div class="item">
@@ -17,6 +18,7 @@
                 SHOP NOW
               </a>
             </div>
+            <div class="mobile-cover"></div>
             <img src="./assets/bannerImg2.png" alt="Banner2" />
           </div>
           <div class="item">
@@ -26,6 +28,7 @@
                 SHOP NOW
               </a>
             </div>
+            <div class="mobile-cover"></div>
             <img src="./assets/bannerImg3.png" alt="Banner3" />
           </div>
         </div>

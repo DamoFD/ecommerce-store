@@ -33,3 +33,13 @@
 .font-size-xl {
     font-size: 75px;
 }
+
+@media only screen and (max-width: 900px) {
+    .font-size-xl {
+        font-size: 55px;
+    }
+
+    .font-size-lg {
+        font-size: 25px;
+    }
+}

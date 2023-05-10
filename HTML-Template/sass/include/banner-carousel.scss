@@ -5,6 +5,7 @@
         width: 100%;
         object-fit: cover;
         object-position: top;
+        z-index: -1;
     }
 
     .owl-carousel .item {
@@ -20,6 +21,7 @@
         margin-left: 20%;
         align-items: center;
         color:rgb(54, 54, 54);
+        z-index: 2;
     }
 
     .banner-btn {
@@ -30,6 +32,7 @@
         color: white;
         transition: background-color 0.5s ease;
         text-decoration: none;
+        z-index: 2;
     }
 
     .banner-btn:hover {
@@ -65,5 +68,45 @@
 
     .owl-carousel .owl-nav button.owl-next {
         right: 0;
+    }
+
+    .mobile-cover {
+        display: none;
+    }
+
+    @media only screen and (max-width: 900px) {
+
+        .owl-carousel .item .item-header {
+            margin-left: 0;
+        }
+
+        .owl-carousel .item .item-header h2 {
+            width: calc(100% - 20px);
+            text-align: center;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev span,
+        .owl-carousel .owl-nav button.owl-next span {
+        display: none;
+        }
+
+        .banner-btn {
+            padding: 10px 33px;
+            margin-top: 20px;
+        }
+
+        .mobile-cover {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .owl-carousel .item img {
+            object-position: 80% 0;
+        }
     }
 }

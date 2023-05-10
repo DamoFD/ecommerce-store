@@ -14,7 +14,7 @@ $(document).ready(function () {
   //featured carousel
   $("#featured .owl-carousel").owlCarousel({
     loop: true,
-    nav: true,
+    nav: false,
     dots: false,
     responsive: {
       0: {
