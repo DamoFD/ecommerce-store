@@ -697,30 +697,30 @@ input, input:focus {
   height: 20px;
 }
 
-#confirmation, #decline {
+#confirmation, #declined {
   margin-top: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#confirmation .header-title, #confirmation .header-txt, #confirmation .newsletter, #decline .header-title, #decline .header-txt, #decline .newsletter {
+#confirmation .header-title, #confirmation .header-txt, #confirmation .newsletter, #declined .header-title, #declined .header-txt, #declined .newsletter {
   margin-top: 20px;
 }
-#confirmation .newsletter, #decline .newsletter {
+#confirmation .newsletter, #declined .newsletter {
   margin-bottom: 100px;
 }
-#confirmation .newsletter-input, #decline .newsletter-input {
+#confirmation .newsletter-input, #declined .newsletter-input {
   border: 1px solid rgb(54, 54, 54);
   padding: 10px;
 }
-#confirmation .newsletter-submit, #decline .newsletter-submit {
+#confirmation .newsletter-submit, #declined .newsletter-submit {
   color: white;
   padding: 11px;
   border: none;
   box-sizing: content-box;
   transition: background-color 0.5s ease;
 }
-#confirmation .newsletter-submit:hover, #decline .newsletter-submit:hover {
+#confirmation .newsletter-submit:hover, #declined .newsletter-submit:hover {
   cursor: pointer;
   background-color: rgb(27, 27, 27);
 }
