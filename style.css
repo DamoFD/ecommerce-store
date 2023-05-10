@@ -112,7 +112,7 @@ input, input:focus {
   justify-self: end;
 }
 
-.nav-item a {
+.nav-item a, .nav-item p {
   color: white;
   font-size: 30px;
   font-weight: 400;

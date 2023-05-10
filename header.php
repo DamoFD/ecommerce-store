@@ -40,23 +40,22 @@
         <span class="bar"></span>
       </div>
       <ul class="nav no-search font-roboto">
-        <li class="nav-item"><a href="#">On Sale</a></li>
-        <li class="nav-item"><a href="#">Category</a></li>
-        <li class="nav-item">
-          <a href="#">Products<i class="fas fa-chevron-down"></i></a>
-        </li>
+        <li class="nav-item"><a href="#">Featured</a></li>
+        <li class="nav-item"><a href="#">Categories</a></li>
+        <li class="nav-item"><a href="#">New Arrivals</a></li>
         <li class="nav-item"><a href="#">Blog</a></li>
-        <li class="nav-item">
-          <a href="#">Category<i class="fas fa-chevron-down"></i></a>
-        </li>
-        <li class="nav-item"><a href="#">Coming Soon</a></li>
-        <li class="nav-item nav-right"><a href="login.php">Login</a></li>
         <li class="nav-item nav-right"><a href="wishlist.php">Wishlist</a></li>
         <li class="nav-item nav-right">
           <form action="#">
             <a href="cart.php"><i class="fas fa-shopping-cart"><span><?php echo isset($currentUser) && array_key_exists('user_id', $currentUser) ? count($Cart->getCartData($currentUser['user_id'])) : 0; ?></span></i></a>
           </form>
         </li>
+        <li class="nav-item nav-right">
+          <?php if(isset($currentUser) && array_key_exists('user_id', $currentUser)): ?>
+            <a href="logout.php">Welcome <?php echo $currentUser['first_name'] ?> Logout</a>
+            <?php else: ?>
+          <a href="login.php">Login</a></li>
+          <?php endif; ?>
       </ul>
     </nav>
     <!--!Primary Navigation-->
