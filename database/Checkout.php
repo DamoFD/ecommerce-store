@@ -31,8 +31,8 @@ require ('../functions.php');
 
     $stripe = new Stripe\StripeClient(STRIPE_SECRET_KEY);
     $session = $stripe->checkout->sessions->create([
-        "success_url" => "http://localhost/ecommerce-site/success.php",
-        "cancel_url" => "http://localhost/ecommerce-site/cancel.php",
+        "success_url" => "http://localhost/ecommerce-site/confirmation.php",
+        "cancel_url" => "http://localhost/ecommerce-site/declined.php",
         "payment_method_types" => ['card'],
         "mode" => "payment",
         "line_items" => $line_items
