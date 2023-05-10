@@ -641,4 +641,88 @@ input, input:focus {
   margin-top: 20px;
 }
 
+#login, #register {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login form, #register form {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+#login .header-txt, #register .header-txt {
+  margin-top: 20px;
+}
+#login .auth-input, #register .auth-input {
+  margin-top: 20px;
+  border: 1px solid rgb(54, 54, 54);
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+#login .auth-btn, #register .auth-btn {
+  margin-top: 20px;
+  height: 52px;
+  width: calc(100% + 12px);
+  color: white;
+  box-sizing: content-box;
+  border: none;
+  padding: none;
+}
+#login .name-inputs, #register .name-inputs {
+  display: flex;
+  width: 410px;
+}
+#login .input-firstName, #login .input-lastName, #register .input-firstName, #register .input-lastName {
+  margin-top: 20px;
+  border: 1px solid rgb(54, 54, 54);
+  height: 50px;
+  width: 50%;
+  padding-left: 10px;
+}
+#login .input-firstName, #register .input-firstName {
+  margin-right: 10px;
+}
+#login .agreement-container, #register .agreement-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#login .agreement-checkBox, #register .agreement-checkBox {
+  width: 20px;
+  height: 20px;
+}
+
+#confirmation, #decline {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#confirmation .header-title, #confirmation .header-txt, #confirmation .newsletter, #decline .header-title, #decline .header-txt, #decline .newsletter {
+  margin-top: 20px;
+}
+#confirmation .newsletter, #decline .newsletter {
+  margin-bottom: 100px;
+}
+#confirmation .newsletter-input, #decline .newsletter-input {
+  border: 1px solid rgb(54, 54, 54);
+  padding: 10px;
+}
+#confirmation .newsletter-submit, #decline .newsletter-submit {
+  color: white;
+  padding: 11px;
+  border: none;
+  box-sizing: content-box;
+  transition: background-color 0.5s ease;
+}
+#confirmation .newsletter-submit:hover, #decline .newsletter-submit:hover {
+  cursor: pointer;
+  background-color: rgb(27, 27, 27);
+}
+
 /*# sourceMappingURL=style.css.map */

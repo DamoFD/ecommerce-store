@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxe Style Society</title>
+
+    <!--Owl-carousel-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Animate-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Font-Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Custom CSS File-->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--start #header-->
+    <header id="header" class="header__main">
+      <!--Primary Navigation-->
+      <nav class="navbar">
+        <a href="#" rel="home"
+          ><img src="./assets/lss-logo-white.png" class="header-img"
+        /></a>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav no-search font-roboto">
+          <li class="nav-item"><a href="#">On Sale</a></li>
+          <li class="nav-item"><a href="#">Category</a></li>
+          <li class="nav-item">
+            <a href="#">Products<i class="fas fa-chevron-down"></i></a>
+          </li>
+          <li class="nav-item"><a href="#">Blog</a></li>
+          <li class="nav-item">
+            <a href="#">Category<i class="fas fa-chevron-down"></i></a>
+          </li>
+          <li class="nav-item"><a href="#">Coming Soon</a></li>
+          <li class="nav-item nav-right"><a href="#">Login</a></li>
+          <li class="nav-item nav-right"><a href="#">Wishlist</a></li>
+          <li class="nav-item nav-right">
+            <form action="#">
+              <a href="#"
+                ><i class="fas fa-shopping-cart"><span>0</span></i></a
+              >
+            </form>
+          </li>
+        </ul>
+      </nav>
+      <!--!Primary Navigation-->
+    </header>
+    <!--!start #header-->
+
+    <!--start #main-->
+    <main id="main-site">
+      <!-- Register Section -->
+      <section id="register">
+        <h1 class="font-mont font-size-xl">Register</h1>
+        <p class="font-roboto font-size-20 header-txt">
+          Have an account? <a href="#">Login</a>
+        </p>
+
+        <!-- Register Form -->
+        <form
+          action="register.php"
+          method="post"
+          enctype="multipart/form-data"
+          id="register-form"
+        >
+          <div class="name-inputs">
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name*"
+              class="input-firstName font-roboto font-size-20 color-primary"
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Last Name*"
+              class="input-lastName font-roboto font-size-20 color-primary"
+              required
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email*"
+            id="email"
+            class="auth-input font-roboto font-size-20 color-primary"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password*"
+            class="auth-input font-roboto font-size-20 color-primary"
+            required
+          />
+          <input
+            type="password"
+            name="confirm_pwd"
+            id="confirm_pwd"
+            placeholder="Confirm Password*"
+            class="auth-input font-roboto font-size-20 color-primary"
+            required
+          />
+          <small id="confirm_error"></small>
+          <div class="agreement-container">
+          <input class="agreement-checkBox" type="checkbox" name="agreement" id="agreement" required />
+          <label
+            for="agreement"
+            class="font-roboto font-size-16 color-primary"
+          >
+            I agree to the
+            <a href="#">terms, conditions, and policy</a> (*)</label
+          >
+          </div>
+          <button
+            name="login_submit"
+            type="submit"
+            class="font-rale font-size-20 color-primary-bg auth-btn"
+          >
+            Register
+          </button>
+        </form>
+        <!-- !Register Form -->
+      </section>
+      <!-- !Register Section -->
+    </main>
+    <!--!start #main-->
+
+    <!--start #footer-->
+    <footer class="color-primary-bg" id="footer">
+      <div class="footer-container">
+        <div class="row">
+          <div class="col">
+            <h2 class="font-mont font-size-lg">Luxe Style Society</h2>
+            <p class="font-size-20 font-roboto">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
+              dolore, possimus suscipit sed aliquid dolores consequuntur
+              inventore totam ex saepe.
+            </p>
+          </div>
+          <div class="col">
+            <h4 class="font-mont font-size-lg">Newsletter</h4>
+            <form>
+              <div class="col">
+                <input class="font-size-20" type="text" placeholder="Email" />
+              </div>
+              <button class="color-primary font-size-20" type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <div class="col">
+            <h4 class="font-mont font-size-lg">Information</h4>
+            <nav>
+              <ul>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">About Us</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Delivery Information</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20"
+                    >Terms & Conditions</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col">
+            <h4 class="font-mont font-size-lg">Account</h4>
+            <nav class="account-nav">
+              <ul>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">My Account</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Order History</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Wish List</a>
+                </li>
+                <li>
+                  <a href="#" class="font-roboto font-size-20">Newsletters</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <p class="font-roboto font-size-14">
+          &copyCopyrights 2023. Designed By <a href="#">Damion Voshall</a>
+        </p>
+      </div>
+    </footer>
+    <!--!start #footer-->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"
+      integrity="sha512-uaZ0UXmB7NHxAxQawA8Ow2wWjdsedpRu7nJRSoI2mjnwtY8V5YiCWavoIpo1AhWPMLiW5iEeavmA3JJ2+1idUg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--Owl-carousel-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--Isotope Plugin-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+      integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--Custom Javascript-->
+    <script src="./index.js"></script>
+  </body>
+</html>
