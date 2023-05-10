@@ -94,14 +94,15 @@
     .purchase-btns {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-top: 70px;
     }
 
-    .qty {
+    .p-qty {
         display: flex;
     }
 
-    .qty input {
+    .p-qty input {
         width: 30px;
         text-align: center;
     }

@@ -91,7 +91,7 @@ foreach ($product->getData() as $item) :
               <form method="post">
                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                 <input type="hidden" name="user_id" value="<?php echo $currentUser['user_id'] ?? '0'; ?>">
-                <input type="hidden" name="color" id="color_input" value="White">
+                <input type="hidden" name="color" id="color_input" value="Yellow">
                 <input type="hidden" name="size" id="size_input" value="M">
                 <input type="hidden" name="quantity" id="quantity_input" value="1">
                 <?php

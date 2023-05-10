@@ -82,10 +82,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <?php
             endforeach;
           } else {
-            echo '<p class="font-roboto font-size-20 color-primary">Your wishlist is empty</p>';
+            echo '<p class="font-roboto font-size-20 color-primary empty-txt">Your wishlist is empty</p>';
           }
         } else {
-          echo '<p class="font-robot font-size-20 color-primary">Please log in to view your wishlist</p>';
+          echo '<p class="font-robot font-size-20 color-primary empty-txt">Please log in to view your wishlist</p>';
         }
         ?>
             </div>
