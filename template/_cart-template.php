@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <h3 class="font-mont font-size-lg color-primary">
             <span>
               $
-              <span id="deal-price"><?php echo $subTotal ?></span>
+              <span id="deal-price"><?php echo $subTotal ?? '0'; ?></span>
             </span>
           </h3>
           <button id="stripe-btn" type="submit" class="font-size-20 color-primary-bg font-roboto checkout-btn">

@@ -25,7 +25,7 @@
 <section id="featured-categories">
         <div class="featured-categories__btn-container">
           <h2 class="font-size-xl font-mont color-primary">
-            Featured Categories
+            Categories
           </h2>
           <div id="filters" class="button-group font-size-16">
             <button

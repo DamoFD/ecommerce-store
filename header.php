@@ -40,9 +40,9 @@
         <span class="bar"></span>
       </div>
       <ul class="nav no-search font-roboto">
-        <li class="nav-item"><a href="#">Featured</a></li>
-        <li class="nav-item"><a href="#">Categories</a></li>
-        <li class="nav-item"><a href="#">New Arrivals</a></li>
+        <li class="nav-item"><a href="featured.php">Featured</a></li>
+        <li class="nav-item"><a href="categories.php">Categories</a></li>
+        <li class="nav-item"><a href="new-arrivals.php">New Arrivals</a></li>
         <li class="nav-item"><a href="#">Blog</a></li>
         <li class="nav-item nav-right"><a href="wishlist.php">Wishlist</a></li>
         <li class="nav-item nav-right">
