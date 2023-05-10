@@ -6,19 +6,6 @@
   sort($unique);
   shuffle($product_shuffle);
 
-  // request method post
-  if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(isset($_POST['featured_categories_submit'])){
-      if(isset($currentUser['user_id'])){
-      // call method addToCart
-      $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
-      }else{
-        header("Location: login.php");
-        exit();
-      }
-    }
-  }
-
   $in_cart = isset($currentUser) && array_key_exists('user_id', $currentUser) ? $Cart->getCartId($Cart->getCartData($currentUser['user_id'])) : [];
 ?>
 
@@ -68,29 +55,25 @@
                 <div>
                   <span class="font-size-20 color-primary">$<?php echo $item['item_price'] ?? "0"; ?></span>
                 </div>
-                <form method="post">
-                    <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
-                    <input type="hidden" name="user_id" value="<?php echo $currentUser['user_id'] ?? '0'; ?>">
+                <div>
                     <?php
-                      if(in_array($item['item_id'],$in_cart ?? [])){
-                        echo '<button
-                        type="submit"
-                        disabled
+                      if(in_array($item['item_id'],$in_cart ?? [])): ?>
+                        <a
+                        href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"
                         class="font-size-20 product-btn color-secondary-bg"
                       >
                         Added to Cart
-                      </button>';
-                      }else{
-                        echo '<button
-                        type="submit"
+                      </a>
+                      <?php else: ?>
+                        <a
+                        href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"
                         name="featured_categories_submit"
                         class="font-size-20 product-btn color-primary-bg"
                       >
-                        Add to Cart
-                      </button>';
-                      }
-                    ?>
-                </form>
+                        View
+                      </a>
+                      <?php endif; ?>
+                </div>
               </div>
             </div>
           </div>
