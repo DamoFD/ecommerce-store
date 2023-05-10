@@ -11,7 +11,7 @@ foreach ($product->getData() as $item) :
       if (isset($_POST['product_submit'])) {
         if (isset($currentUser['user_id'])) {
         // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id'], $_POST['color'], $_POST['size']);
+        $Cart->addToCart($_POST['user_id'], $_POST['item_id'], $_POST['color'], $_POST['size'], $_POST['quantity']);
         }else{
           header('Location: login.php');
           exit();
@@ -72,14 +72,14 @@ foreach ($product->getData() as $item) :
             </div>
             <div class="purchase-btns">
               <!--product qty section-->
-              <div class="qty">
+              <div class="p-qty">
                 <p class="font-roboto font-size-20">Qty:</p>
                 <div class="font-roboto">
-                  <button data-id="pro1" class="qty-down font-size-20 color-primary-bg">
+                  <button data-id="pro1" class="p-qty-down font-size-20 color-primary-bg">
                     <i class="fa-solid fa-minus"></i>
                   </button>
-                  <input data-id="pro1" type="text" class="qty-input font-size-20 color-primary" disabled value="1" placeholder="1" />
-                  <button data-id="pro1" class="qty-up font-size-20 color-primary-bg">
+                  <input data-id="pro1" type="text" class="p-qty-input font-size-20 color-primary" disabled value="1" placeholder="1" />
+                  <button data-id="pro1" class="p-qty-up font-size-20 color-primary-bg">
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
@@ -93,6 +93,7 @@ foreach ($product->getData() as $item) :
                 <input type="hidden" name="user_id" value="<?php echo $currentUser['user_id'] ?? '0'; ?>">
                 <input type="hidden" name="color" id="color_input" value="White">
                 <input type="hidden" name="size" id="size_input" value="M">
+                <input type="hidden" name="quantity" id="quantity_input" value="1">
                 <?php
                 if (isset($currentUser) && array_key_exists('user_id', $currentUser) && in_array($item['item_id'], $Cart->getCartId($Cart->getCartData($currentUser['user_id'])) ?? [])) {
                   echo '<button

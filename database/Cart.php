@@ -31,7 +31,7 @@ class Cart
             $stmt = $this->db->con->prepare($query_string);
 
             // Bind parameters
-            $types = 'iiss';
+            $types = 'iissi';
             $values = array_values($params);
             $stmt->bind_param($types, ...$values);
 
@@ -45,13 +45,14 @@ class Cart
 
 
     // get user_id and item_id and insert into cart table
-    public function addToCart($userid, $itemid, $color, $size){
+    public function addToCart($userid, $itemid, $color, $size, $quantity){
         if(isset($userid) && isset($itemid)){
             $params = array(
                 "user_id" => $userid,
                 "item_id" => $itemid,
                 "color" => $color,
-                "size" => $size
+                "size" => $size,
+                "quantity" => $quantity
             );
 
             //insert data into cart

@@ -82,7 +82,7 @@ $(document).ready(function () {
     },
   });
 
-  //product qty section
+  // cart qty section
   let $qty__up = $(".qty .qty-up");
   let $qty__down = $(".qty .qty-down");
   let $deal_price = $("#deal-price");
@@ -185,6 +185,32 @@ $(document).ready(function () {
 
     // Update input field
     $("#size_input").attr('value', sizeName);
+  });
+
+  // product quantity section
+  let $p__qty__up = $(".p-qty .p-qty-up");
+  let $p__qty__down = $(".p-qty .p-qty-down");
+
+  // click qty up
+  $p__qty__up.click(function (e) {
+    let $input = $(`.p-qty-input[data-id='pro1']`);
+    if ($input.val() >= 1 && $input.val() <= 9) {
+      $input.val(function (i, oldval) {
+        $('#quantity_input').val(++oldval);
+        return oldval;
+      });
+    }
+  });
+
+  // click qty down
+  $p__qty__down.click(function (e) {
+    let $input = $(`.p-qty-input[data-id='pro1']`);
+    if ($input.val() > 1 && $input.val() <= 10) {
+      $input.val(function (i, oldval) {
+        $('#quantity_input').val(--oldval);
+        return oldval;
+      });
+    }
   });
 
   //registration
