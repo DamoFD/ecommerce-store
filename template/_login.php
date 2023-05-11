@@ -12,7 +12,7 @@
 <!-- Login Section -->
 <section id="login">
 <h1 class="font-mont font-size-xl color-primary">Login</h1>
-<p class="font-roboto font-size-20 header-txt">Need an account? <a href="#">Create Account</a></p>
+<p class="font-roboto font-size-20 header-txt">Need an account? <a href="register.php">Create Account</a></p>
 
     <!-- Login Form -->
     <form

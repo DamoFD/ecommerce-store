@@ -75,4 +75,39 @@
         cursor: pointer;
         background-color:rgb(27, 27, 27);
     }
+
+    @media only screen and (max-width: 900px) {
+
+        .container {
+            flex-direction: column-reverse;
+            width: calc(100% - 40px);
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .container .col {
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .container .sub-total {
+            margin-right: 0;
+        }
+
+        .container .item {
+            flex-direction: column;
+            width: 100%;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .container .qty input {
+            width: 40px;
+        }
+
+        .container .qty .qty-container {
+            display: flex;
+        }
+    }
 }

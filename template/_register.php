@@ -11,7 +11,7 @@
 <!-- register section -->
 <section id="register">
     <h1 class="font-mont font-size-xl color-primary">Register</h1>
-    <p class="font-roboto font-size-20 header-txt">Have an account? <a href="#">Login</a></p>
+    <p class="font-roboto font-size-20 header-txt">Have an account? <a href="login.php">Login</a></p>
 
     <!-- Register Form -->
     <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
@@ -30,7 +30,7 @@
           value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>" 
           name="lastName"
           id="lastName"
-          placeholder="Last Name"
+          placeholder="Last Name*"
           class="input-lastName font-roboto font-size-20 color-primary"
           required
         >

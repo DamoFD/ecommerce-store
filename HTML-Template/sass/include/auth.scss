@@ -61,4 +61,14 @@
         width: 20px;
         height: 20px;
     }
+
+    @media only screen and (max-width: 900px) {
+        form {
+            width: calc(100% - 50px);
+        }
+
+        .name-inputs {
+            width: calc(100% + 10px);
+        }
+    }
 }

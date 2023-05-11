@@ -29,4 +29,12 @@
         cursor: pointer;
         background-color:rgb(27, 27, 27);
     }
+
+    @media only screen and (max-width: 900px) {
+        text-align: center;
+
+        .newsletter-submit {
+            margin-top: 20px;
+        }
+    }
 }

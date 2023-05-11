@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                   <!--product qty-->
                   <div class="qty">
-                    <div class="font-roboto">
+                    <div class="font-roboto qty-container">
                       <button class="qty-down font-size-20 color-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                         <i class="fa-solid fa-minus"></i>
                       </button>

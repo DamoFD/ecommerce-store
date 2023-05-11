@@ -73,8 +73,8 @@ foreach ($product->getData() as $item) :
             <div class="purchase-btns">
               <!--product qty section-->
               <div class="p-qty">
-                <p class="font-roboto font-size-20">Qty:</p>
-                <div class="font-roboto">
+                <p class="font-roboto font-size-20 p-qty-txt">Qty:</p>
+                <div class="font-roboto p-qty-btns">
                   <button data-id="pro1" class="p-qty-down font-size-20 color-primary-bg">
                     <i class="fa-solid fa-minus"></i>
                   </button>

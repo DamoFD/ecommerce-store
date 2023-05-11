@@ -494,10 +494,10 @@ input, input:focus {
     flex-direction: column;
     margin-top: 30px;
   }
-}
-#banner_ads img {
-  width: 100%;
-  margin-top: 20px;
+  #banner_ads img {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 #blogs h2 {
@@ -649,6 +649,34 @@ input, input:focus {
   cursor: pointer;
   background-color: rgb(27, 27, 27);
 }
+@media only screen and (max-width: 900px) {
+  #cart .container {
+    flex-direction: column-reverse;
+    width: calc(100% - 40px);
+    margin-top: 50px;
+    align-items: center;
+  }
+  #cart .container .col {
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+  }
+  #cart .container .sub-total {
+    margin-right: 0;
+  }
+  #cart .container .item {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+  }
+  #cart .container .qty input {
+    width: 40px;
+  }
+  #cart .container .qty .qty-container {
+    display: flex;
+  }
+}
 
 #product {
   margin-top: 150px;
@@ -757,6 +785,46 @@ input, input:focus {
 #product .product-description p {
   margin-top: 20px;
 }
+@media only screen and (max-width: 900px) {
+  #product .row .col img {
+    width: 100%;
+    height: 350px;
+  }
+  #product .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
+  #product .row .col {
+    width: 100%;
+  }
+  #product .product-ratings {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  #product .size .size-btns {
+    width: calc(100% - 40px);
+  }
+  #product .size button {
+    padding: 10px 25px;
+  }
+  #product .purchase-btns button {
+    margin: 0 5px;
+    padding: 5px;
+  }
+  #product .p-qty-btns {
+    display: flex;
+  }
+  #product .p-qty-txt {
+    display: none;
+  }
+  #product .p-qty input {
+    width: 10px;
+  }
+}
 
 #login, #register {
   margin-top: 150px;
@@ -813,6 +881,14 @@ input, input:focus {
   width: 20px;
   height: 20px;
 }
+@media only screen and (max-width: 900px) {
+  #login form, #register form {
+    width: calc(100% - 50px);
+  }
+  #login .name-inputs, #register .name-inputs {
+    width: calc(100% + 10px);
+  }
+}
 
 #confirmation, #declined {
   margin-top: 250px;
@@ -840,6 +916,14 @@ input, input:focus {
 #confirmation .newsletter-submit:hover, #declined .newsletter-submit:hover {
   cursor: pointer;
   background-color: rgb(27, 27, 27);
+}
+@media only screen and (max-width: 900px) {
+  #confirmation, #declined {
+    text-align: center;
+  }
+  #confirmation .newsletter-submit, #declined .newsletter-submit {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
