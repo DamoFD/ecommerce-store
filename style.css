@@ -232,7 +232,7 @@ input, input:focus {
   }
 }
 #banner-area .owl-carousel .item img {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: top;
@@ -240,6 +240,8 @@ input, input:focus {
 }
 #banner-area .owl-carousel .item {
   position: relative;
+  width: 100%;
+  height: 100vh;
 }
 #banner-area .owl-carousel .item .item-header {
   position: absolute;

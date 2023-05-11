@@ -19,7 +19,7 @@
               </a>
             </div>
             <div class="mobile-cover"></div>
-            <img src="./assets/bannerImg2.webp" alt="Banner2" />
+            <img src="./assets/bannerImg2.webp" alt="Banner2" loading="lazy" />
           </div>
           <div class="item">
             <div class="item-header">
@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="mobile-cover"></div>
-            <img src="./assets/bannerImg3.webp" alt="Banner3" />
+            <img src="./assets/bannerImg3.webp" alt="Banner3" loading="lazy" />
           </div>
         </div>
       </section>

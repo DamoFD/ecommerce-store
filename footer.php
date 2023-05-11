@@ -105,7 +105,15 @@
     ></script>
 
     <!-- Stripe -->
-    <script defer src="https://js.stripe.com/v3/"></script>
+    <?php
+    // Check if the current page is the cart page
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    $cartPage = 'cart.php';
+
+    if($currentPage == $cartPage) {
+    echo '<script defer src="https://js.stripe.com/v3/"></script>';
+    }
+    ?>
 
     <!-- Global User JS variable -->
     <?php if(isset($currentUser['user_id'])):?>
