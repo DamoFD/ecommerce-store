@@ -81,7 +81,7 @@ public function getCartData($userid = null){
     if($userid != null){
 
         // Create SQL Statement
-        $query_string = "SELECT c.*, p.item_name, p.item_price, p.item_image, c.color, c.size FROM cart c INNER JOIN product p ON c.item_id = p.item_id WHERE c.user_id=?";
+        $query_string = "SELECT c.*, p.item_name, p.item_price, p.item_image, p.item_image_mobile, c.color, c.size FROM cart c INNER JOIN product p ON c.item_id = p.item_id WHERE c.user_id=?";
 
         // Prepare Statement
         $stmt = $this->db->con->prepare($query_string);
@@ -243,7 +243,7 @@ public function getWishlistData($userid = null){
     if($userid != null){
 
         // Create SQL Statement
-        $query_string = "SELECT w.*, p.item_name, p.item_price, p.item_image, w.color, w.size FROM wishlist w INNER JOIN product p ON w.item_id = p.item_id WHERE w.user_id=?";
+        $query_string = "SELECT w.*, p.item_name, p.item_price, p.item_image, p.item_image_mobile, w.color, w.size FROM wishlist w INNER JOIN product p ON w.item_id = p.item_id WHERE w.user_id=?";
 
         // Prepare Statement
         $stmt = $this->db->con->prepare($query_string);

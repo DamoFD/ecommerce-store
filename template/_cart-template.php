@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             delivery
           </p>
           <h2 class="font-mont font-size-lg color-primary">
-            Subtotal (<?php echo isset($cartData) ? count($product->getData('cart')) : 0; ?> items)
+            Subtotal (<?php echo isset($cartData) ? count($cartData) : 0; ?> items)
           </h2>
           <h3 class="font-mont font-size-lg color-primary">
             <span>
