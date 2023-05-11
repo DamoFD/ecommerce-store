@@ -9,7 +9,7 @@
                 <div class="col">
                 <img
                   src="./assets/blog/whatsTrending.webp"
-                  srcset="./assets/whatsTrending-mobile.webp 600w, ./assets/whatsTrending.webp"
+                  srcset="./assets/blog/whatsTrending-mobile.webp 600w, ./assets/blog/whatsTrending.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn what is trending in this blog"
                   loading="lazy" />
@@ -32,7 +32,7 @@
                 <div class="col">
                 <img
                   src="./assets/blog/suit.webp"
-                  srcset="./assets/suit-mobile.webp 600w, ./assets/suit.webp"
+                  srcset="./assets/blog/suit-mobile.webp 600w, ./assets/blog/suit.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn what is considered formal attire"
                   loading="lazy" />
@@ -55,7 +55,7 @@
                 <div class="col">
                 <img
                   src="./assets/blog/volleyball.webp"
-                  srcset="./assets/volleyball-mobile.webp 600w, ./assets/volleyball.webp"
+                  srcset="./assets/blog/volleyball-mobile.webp 600w, ./assets/blog/volleyball.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn the latest summer fads"
                   loading="lazy" />
