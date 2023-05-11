@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2023 at 07:37 AM
+-- Generation Time: May 11, 2023 at 02:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,15 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `cart_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `item_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `color` varchar(100) NOT NULL,
+  `size` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
-(21, 1, 5);
+INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `quantity`, `color`, `size`) VALUES
+(41, 8, 1, 2, 'Yellow', 'M');
 
 -- --------------------------------------------------------
 
@@ -76,16 +79,26 @@ CREATE TABLE `user` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
-  `register_date` date NOT NULL
+  `register_date` date NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(3, 'Ryan', 'Reynolds', '2023-05-02'),
-(5, 'John', 'Doe', '2023-05-02');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`, `email`, `password`) VALUES
+(3, 'Ryan', 'Reynolds', '2023-05-02', '', ''),
+(5, 'John', 'Doe', '2023-05-02', '', ''),
+(6, 'Billy', 'Bob', '2023-05-04', 'billy@billy.com', '$2y$10$9fJz3QOzA/UUrd40dnW6uuUZP0rh7I.645jjraIqNBPK/3FvnyYr6'),
+(7, 'ABC', 'ABC', '2023-05-04', 'abc@abc.com', '$2y$10$/MDWurbXXN23BTw5Th/NrexAQTvTc71VZmO9RxWN5AwL3B7w/NL3u'),
+(8, '123', '123', '2023-05-04', '123@123.com', '$2y$10$UVeHuS6sX1cP8mXOikKNgOOQ2y5cPr2ie3rsq/ImCWR16NAhrIQD6'),
+(9, '123', '123', '2023-05-04', '123@123.com', '$2y$10$B55ZNKbE7DZg9jK0kz1tTuNBjP6VKrNlgM11N9BMEq4Rt9Z.wWDDO'),
+(10, 'Joe', 'Bob', '2023-05-04', '987@987.com', '$2y$10$NC06cdkZOQHxL6pCrF021O6LS0M4fE272.OS2WjYDFpeP3Y5U9F7u'),
+(11, 'Odie', 'Dozer', '2023-05-04', 'odie@odie.com', '$2y$10$0RxFQU2FBXyS5/AP47Mr..40CiIJGVTA.snfTS.5KkJcHcufvzSLi'),
+(12, 'test', 'test', '2023-05-04', 'test@test.com', '$2y$10$A.B6PSyD1Egw/E4Q7NZP5eicj6i/XSq1z.gkVEKMcygJe1VyZESrG'),
+(13, '597', '597', '2023-05-09', '597@597.com', '$2y$10$tMLoOXlU5tJhclcsFT4lMuvWGZPRpFFa2DNm7IGgt84j/JJNk3nGa');
 
 -- --------------------------------------------------------
 
@@ -96,8 +109,18 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUE
 CREATE TABLE `wishlist` (
   `cart_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `item_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `wishlist`
+--
+
+INSERT INTO `wishlist` (`cart_id`, `user_id`, `item_id`, `quantity`, `color`, `size`) VALUES
+(42, 8, 4, 1, 'Yellow', 'M');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +152,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `cart_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -141,7 +164,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
