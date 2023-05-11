@@ -14,7 +14,7 @@
             <div class="item">
               <div class="product font-roboto">
                 <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"
-                  ><img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="product1"
+                  ><img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" loading="lazy" alt="product1"
                 /></a>
                 <div class="product-info">
                   <h3 class="font-size-lg color-primary"><?php echo $item['item_name'] ?? "Unknown"; ?></h3>

@@ -9,7 +9,7 @@
               </a>
             </div>
             <div class="mobile-cover"></div>
-            <img src="./assets/bannerImg1.png" alt="Banner1" />
+            <img src="./assets/bannerImg1.webp" alt="Banner1" />
           </div>
           <div class="item">
             <div class="item-header">
@@ -19,7 +19,7 @@
               </a>
             </div>
             <div class="mobile-cover"></div>
-            <img src="./assets/bannerImg2.png" alt="Banner2" />
+            <img src="./assets/bannerImg2.webp" alt="Banner2" />
           </div>
           <div class="item">
             <div class="item-header">
@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="mobile-cover"></div>
-            <img src="./assets/bannerImg3.png" alt="Banner3" />
+            <img src="./assets/bannerImg3.webp" alt="Banner3" />
           </div>
         </div>
       </section>

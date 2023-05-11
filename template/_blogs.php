@@ -7,7 +7,7 @@
             <div class="item">
               <div class="card">
                 <div class="col">
-                  <img src="./assets/blog/whatsTrending.jpg" alt="card image" />
+                  <img src="./assets/blog/whatsTrending.webp" alt="card image" loading="lazy" />
                 </div>
                 <div class="col">
                   <h3 class="font-size-lg font-rale color-primary">
@@ -25,7 +25,7 @@
             <div class="item">
               <div class="card">
                 <div class="col">
-                  <img src="./assets/blog/suit.jpg" alt="card image" />
+                  <img src="./assets/blog/suit.webp" alt="card image" loading="lazy" />
                 </div>
                 <div class="col">
                   <h3 class="font-size-lg font-rale color-primary">
@@ -43,7 +43,7 @@
             <div class="item">
               <div class="card">
                 <div class="col">
-                  <img src="./assets/blog/volleyball.jpg" alt="card image" />
+                  <img src="./assets/blog/volleyball.webp" alt="card image" loading="lazy" />
                 </div>
                 <div class="col">
                   <h3 class="font-size-lg font-rale color-primary">

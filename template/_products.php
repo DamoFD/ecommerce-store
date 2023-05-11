@@ -25,7 +25,7 @@ foreach ($product->getData() as $item) :
       <div>
         <div class="row">
           <div class="col">
-            <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="product1" />
+            <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" loading="lazy" alt="product1" />
           </div>
           <div class="col">
             <h1 class="font-mont font-size-xl color-primary"><?php echo $item['item_name'] ?? "Unknown"; ?></h1>

@@ -33,7 +33,7 @@
   <header id="header" class="header__main">
     <!--Primary Navigation-->
     <nav class="navbar">
-      <a href="index.php" rel="home"><img src="./assets/lss-logo-white.png" class="header-img" /></a>
+      <a href="index.php" rel="home"><img src="./assets/lss-logo-white.webp" class="header-img" /></a>
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>

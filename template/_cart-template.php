@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <!--cart item-->
               <div class="item">
                 <div class="col">
-                  <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="cart1" />
+                  <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" alt="cart1" loading="lazy" />
                 </div>
                 <div class="col">
                   <div class="product-info">

@@ -1,6 +1,6 @@
 <!--Banner Ads-->
 <section id="banner_ads">
-        <img src="./assets/adBannerDiscount.png" alt="banner1" />
-        <img src="./assets/adBannerShipping.png" alt="banner2" />
+        <img src="./assets/adBannerDiscount.webp" alt="banner1" loading="lazy" />
+        <img src="./assets/adBannerShipping.webp" alt="banner2" loading="lazy" />
       </section>
       <!--!Banner Ads-->

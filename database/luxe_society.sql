@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 02:31 AM
+-- Generation Time: May 11, 2023 at 04:41 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -63,11 +63,11 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`item_id`, `item_name`, `item_price`, `item_image`, `item_register`, `item_category`) VALUES
-(1, 'Men\'s Shirt', 49.99, './assets/products/dress-shirt.jpg', '2023-05-02', 'Men'),
-(2, 'Women\'s Jeans', 39.99, './assets/products/womens-jeans.jpg', '2023-05-02', 'Women'),
-(3, 'Women\'s Dress', 99.99, './assets/products/womens-dress.jpg', '2023-05-02', 'Women'),
-(4, 'Men\'s Jeans', 49.99, './assets/products/mens-jeans.jpg', '2023-05-02', 'Men'),
-(5, 'Women\'s Shoes', 89.99, './assets/products/womens-shoes.jpg', '2023-05-02', 'Women');
+(1, 'Men\'s Shirt', 49.99, './assets/products/dress-shirt.webp', '2023-05-02', 'Men'),
+(2, 'Women\'s Jeans', 39.99, './assets/products/womens-jeans.webp', '2023-05-02', 'Women'),
+(3, 'Women\'s Dress', 99.99, './assets/products/womens-dress.webp', '2023-05-02', 'Women'),
+(4, 'Men\'s Jeans', 49.99, './assets/products/mens-jeans.webp', '2023-05-02', 'Men'),
+(5, 'Women\'s Shoes', 89.99, './assets/products/womens-shoes.webp', '2023-05-02', 'Women');
 
 -- --------------------------------------------------------
 
@@ -114,13 +114,6 @@ CREATE TABLE `wishlist` (
   `color` varchar(255) NOT NULL,
   `size` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`cart_id`, `user_id`, `item_id`, `quantity`, `color`, `size`) VALUES
-(42, 8, 4, 1, 'Yellow', 'M');
 
 --
 -- Indexes for dumped tables

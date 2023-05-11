@@ -242,6 +242,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Stripe Checkout Submission
   const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
   const btn = document.querySelector('#stripe-btn');
+
+  if (btn) {//check if btn exists
   btn.addEventListener('click', () => {
     fetch('./database/Checkout.php', {
       method: "POST",
@@ -254,5 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
       stripe.redirectToCheckout({sessionId: payload.id})
     })
   })
+}
 
 });
