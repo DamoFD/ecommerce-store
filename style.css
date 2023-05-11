@@ -1,4 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto&display=swap");
+@font-face {
+  font-family: montserrat-regular;
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(./assets/fonts/Raleway-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: roboto-regular;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
@@ -19,15 +33,15 @@ input, input:focus {
 }
 
 .font-roboto {
-  font-family: "Roboto", sans-serif;
+  font-family: "roboto-regular", sans-serif;
 }
 
 .font-rale {
-  font-family: "Raleway", sans-serif;
+  font-family: "raleway-regular", sans-serif;
 }
 
 .font-mont {
-  font-family: "Montserrat", sans-serif;
+  font-family: "montserrat-regular", sans-serif;
 }
 
 .font-size-12 {

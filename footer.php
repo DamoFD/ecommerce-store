@@ -83,12 +83,7 @@
       integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"
-      integrity="sha512-uaZ0UXmB7NHxAxQawA8Ow2wWjdsedpRu7nJRSoI2mjnwtY8V5YiCWavoIpo1AhWPMLiW5iEeavmA3JJ2+1idUg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!--Owl-carousel-->
@@ -97,6 +92,7 @@
       integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!--Isotope Plugin-->
@@ -105,19 +101,20 @@
       integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://js.stripe.com/v3/"></script>
 
     <!-- Global User JS variable -->
     <?php if(isset($currentUser['user_id'])):?>
-      <script>
+      <script async>
         const currentUserId = <?php echo $currentUser['user_id']; ?>;
       </script>
     <?php endif; ?>
 
     <!--Custom Javascript-->
-    <script src="./index.js"></script>
+    <script defer src="./index.js"></script>
   </body>
 </html>
