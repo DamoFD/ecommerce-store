@@ -31,7 +31,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <!--cart item-->
                             <div class="item">
                                 <div class="col">
-                                    <img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" loading="lazy" alt="cart1" />
+                                <img
+                    src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.webp"; ?>"
+                    srcset="<?php echo $item['item_image_mobile'] ?? "./assets/products/dress-shirt-mobile.webp"; ?> 600w, <?php echo $item['item_image'] ?? "./assets/products/dress-shirt.webp"; ?>"
+                    sizes="(max-width: 600px) 100vw"
+                    loading="lazy"
+                    alt="<?php echo $item['item_name'] ?? 'product'; ?>"
+                />
                                 </div>
                                 <div class="col">
                                     <div class="product-info">
