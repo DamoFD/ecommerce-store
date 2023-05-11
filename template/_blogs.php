@@ -8,7 +8,7 @@
               <div class="card">
                 <div class="col">
                 <img
-                  src="./assets/whatsTrending.webp"
+                  src="./assets/blog/whatsTrending.webp"
                   srcset="./assets/whatsTrending-mobile.webp 600w, ./assets/whatsTrending.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn what is trending in this blog"
@@ -31,7 +31,7 @@
               <div class="card">
                 <div class="col">
                 <img
-                  src="./assets/suit.webp"
+                  src="./assets/blog/suit.webp"
                   srcset="./assets/suit-mobile.webp 600w, ./assets/suit.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn what is considered formal attire"
@@ -54,7 +54,7 @@
               <div class="card">
                 <div class="col">
                 <img
-                  src="./assets/volleyball.webp"
+                  src="./assets/blog/volleyball.webp"
                   srcset="./assets/volleyball-mobile.webp 600w, ./assets/volleyball.webp"
                   sizes="(max-width: 600px) 100vw"
                   alt="Learn the latest summer fads"
