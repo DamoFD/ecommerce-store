@@ -41,8 +41,13 @@
           <div class="grid-item <?php echo $item['item_category'] ?? "category"; ?>">
             <div class="product font-roboto">
               <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"
-                ><img src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.jpg"; ?>" loading="lazy" alt="product1"
-              /></a>
+                ><img
+                    src="<?php echo $item['item_image'] ?? "./assets/products/dress-shirt.webp"; ?>"
+                    srcset="<?php echo $item['item_image_mobile'] ?? "./assets/products/dress-shirt-mobile.webp"; ?> 600w, <?php echo $item['item_image'] ?? "./assets/products/dress-shirt.webp"; ?>"
+                    sizes="(max-width: 600px) 100vw"
+                    loading="lazy"
+                    alt="<?php echo $item['item_name'] ?? 'product'; ?>"
+                /></a>
               <div class="product-info">
                 <h3 class="font-size-lg color-primary"><?php echo $item['item_name'] ?? "Unknown"; ?></h3>
                 <div class="font-size-20 color-primary">
