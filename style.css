@@ -231,6 +231,10 @@ input, input:focus {
     transform: translate(0%) !important;
   }
 }
+#banner-area {
+  width: 100%;
+  height: 100vh;
+}
 #banner-area .owl-carousel .item img {
   height: 100%;
   width: 100%;
@@ -569,17 +573,17 @@ input, input:focus {
 #footer .footer-container .col input {
   width: 200px;
   height: 30px;
-  background-color: rgb(138, 137, 137);
-  color: white;
+  background-color: white;
+  color: rgb(54, 54, 54);
   padding-left: 10px;
 }
 #footer .footer-container .col input::placeholder {
-  color: rgb(184, 183, 183);
+  color: rgb(70, 69, 69);
 }
 #footer .footer-container .col button {
   padding: 5px;
   border: none;
-  background-color: rgb(138, 137, 137);
+  background-color: white;
 }
 #footer .footer-container .col > *, #footer li, #footer button {
   margin-top: 10px;

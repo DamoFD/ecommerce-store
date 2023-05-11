@@ -14,7 +14,7 @@
             </p>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-lg">Newsletter</h4>
+            <h3 class="font-mont font-size-lg">Newsletter</h3>
             <form>
               <div class="col">
                 <input class="font-size-20" type="text" placeholder="Email" />
@@ -25,7 +25,7 @@
             </form>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-lg">Information</h4>
+            <h3 class="font-mont font-size-lg">Information</h3>
             <nav>
               <ul>
                 <li>
@@ -50,7 +50,7 @@
             </nav>
           </div>
           <div class="col">
-            <h4 class="font-mont font-size-lg">Account</h4>
+            <h3 class="font-mont font-size-lg">Account</h3>
             <nav class="account-nav">
               <ul>
                 <li>

@@ -27,19 +27,19 @@
     .footer-container .col input {
         width: 200px;
         height: 30px;
-        background-color: rgb(138, 137, 137);
-        color: white;
+        background-color: white;
+        color: $color-primary;
         padding-left: 10px;
     }
 
     .footer-container .col input::placeholder {
-        color: rgb(184, 183, 183);
+        color: rgb(70, 69, 69);
     }
 
     .footer-container .col button {
         padding: 5px;
         border: none;
-        background-color: rgb(138, 137, 137);
+        background-color: white;
     }
 
     .footer-container .col > *, li, button {

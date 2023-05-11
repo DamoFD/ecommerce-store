@@ -72,7 +72,7 @@ $(document).ready(function(){
     $("#blogs .owl-carousel").owlCarousel({
         loop: true,
         nav: false,
-        dots: true,
+        dots: false,
         responsive: {
             0: {
                 items: 1

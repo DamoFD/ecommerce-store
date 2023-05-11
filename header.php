@@ -10,6 +10,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to Luxe Style Society! This is an ecommerce template by Damion Voshall." />
   <title>Luxe Style Society</title>
 
   <!--Owl-carousel-->
@@ -33,7 +34,7 @@
   <header id="header" class="header__main">
     <!--Primary Navigation-->
     <nav class="navbar">
-      <a href="index.php" rel="home"><img src="./assets/lss-logo-white.webp" class="header-img" /></a>
+      <a href="index.php" rel="home" aria-label="Home"><img src="./assets/lss-logo-white.webp" class="header-img" alt="Luxe Society Logo" /></a>
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>

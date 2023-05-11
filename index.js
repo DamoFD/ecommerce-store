@@ -240,6 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Stripe Checkout Submission
+  if (window.Stripe) {
   const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
   const btn = document.querySelector('#stripe-btn');
 
@@ -257,5 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 }
+  }
 
 });
