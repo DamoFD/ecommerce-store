@@ -9,6 +9,18 @@ $(document).ready(function () {
     autoplayTimeout: 5000,
     animateOut: "fadeOut",
     animateIn: "fadeIn",
+    onInitialized: function () {
+      const owlPrev = $(".owl-prev");
+      const owlNext = $(".owl-next");
+      const prevId = "prev_carousel_btn";
+      const nextId = "next_carousel_btn";
+      const prevAriaLabel = "previous carousel picture";
+      const nextAriaLabel = "next carousel picture";
+      owlPrev.attr("id", prevId);
+      owlNext.attr("id", nextId);
+      owlPrev.attr("aria-label", prevAriaLabel);
+      owlNext.attr("aria-label", nextAriaLabel);
+    }
   });
 
   //featured carousel
@@ -71,7 +83,7 @@ $(document).ready(function () {
   $("#blogs .owl-carousel").owlCarousel({
     loop: true,
     nav: false,
-    dots: true,
+    dots: false,
     responsive: {
       0: {
         items: 1,
