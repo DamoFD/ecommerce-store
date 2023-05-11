@@ -10,6 +10,7 @@
 ?>
 
 <?php
+    ob_start();
     /* include featured */
         include('template/_featured.php');
     /* include featured */

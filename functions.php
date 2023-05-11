@@ -1,7 +1,4 @@
-<?php
-
-    //start session
-    session_start();
+<?php session_start();
 
     //require MySQL Connection
     require('database/DBController.php');

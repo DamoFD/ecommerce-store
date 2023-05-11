@@ -1,3 +1,8 @@
+<?php
+  //require functions.php file
+  require('functions.php');
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,11 +24,6 @@
 
   <!--Custom CSS File-->
   <link rel="stylesheet" href="./style.css" />
-
-  <?php
-  //require functions.php file
-  require('functions.php');
-  ?>
 
 
 </head>
