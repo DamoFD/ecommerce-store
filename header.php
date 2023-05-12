@@ -56,7 +56,7 @@
         </li>
         <li class="nav-item nav-right">
           <?php if(isset($currentUser) && array_key_exists('user_id', $currentUser)): ?>
-            <a href="logout.php">Welcome <?php echo $currentUser['first_name'] ?> | Logout</a>
+            <a href="logout.php">Welcome <?php echo htmlspecialchars($currentUser['first_name'], ENT_QUOTES, 'UTF-8'); ?> | Logout</a>
             <?php else: ?>
           <a href="login.php">Login</a></li>
           <?php endif; ?>

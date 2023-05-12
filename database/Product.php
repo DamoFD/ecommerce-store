@@ -4,11 +4,13 @@
 class Product
 {
     public $db = null;
+    private $Cache;
 
-    public function __construct(DBController $db)
+    public function __construct(DBController $db, Cache $Cache)
     {
         if(!isset($db->con)) return null;
         $this->db = $db;
+        $this->Cache = $Cache;
     }
 
     //fetch product data using getData Method
@@ -18,6 +20,14 @@ class Product
 
         // Check if provided table is in allowed list
         if (in_array($table, $allowedTables)){
+
+        // Check cache first
+        $cachedData = $this->Cache->getFromCache($table);
+        if ($cachedData !== false) {
+            return $cachedData;
+        }
+
+        // If no cache, get from database
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
@@ -25,6 +35,9 @@ class Product
         while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $resultArray[] = $item;
         }
+
+        // Save data to the cache
+        $this->Cache->saveToCache($table, $resultArray);
 
         return $resultArray;
     } else {
@@ -39,6 +52,14 @@ class Product
 
         // Check table and item_id
         if(isset($item_id) && in_array($table, $allowedTables)){
+            $cacheKey = $table . '_' . $item_id;
+
+            // Check cache first
+            $cachedData = $this->Cache->getFromCache($cacheKey);
+            if ($cachedData !== false) {
+                return $cachedData;
+            }
+
             // Prepare the SQL statement
             $stmt = $this->db->con->prepare("SELECT * FROM {$table} WHERE item_id=?");
 
@@ -57,6 +78,9 @@ class Product
             while($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 $resultArray[] = $item;
             }
+
+            // Save data to the cache
+            $this->Cache->saveToCache($cacheKey, $resultArray);
 
             return $resultArray;
         }else{

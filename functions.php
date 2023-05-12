@@ -18,11 +18,17 @@
     //require User Class
     require ('database/User.php');
 
+    //require Cache Class
+    require ('database/Cache.php');
+
     //DBController Object
     $db = new DBController();
 
+    //Cache Object
+    $Cache = new Cache();
+
     //Product Object
-    $product = new Product($db);
+    $product = new Product($db, $Cache);
     $product_shuffle = $product->getData();
 
     //Cart Object
