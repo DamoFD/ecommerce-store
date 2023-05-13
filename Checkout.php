@@ -1,11 +1,9 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 
 require ('./functions.php');
 
+try {
     $cartData = $Cart->getCartData($currentUser['user_id']);
 
     $line_items = [];
@@ -39,4 +37,10 @@ require ('./functions.php');
     ]);
 
     echo json_encode($session);
+
+} catch (Exception $e) {
+    error_log($e->getMessage());
+    http_response_code(500);
+    echo json_encode(array('error' => 'A server error ocurred. Please try again later.'));
+}
 ?>

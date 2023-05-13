@@ -276,23 +276,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Stripe Checkout Submission
   if (window.Stripe) {
-  const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
-  const btn = document.querySelector('#stripe-btn');
-
-  if (btn) {//check if btn exists
-  btn.addEventListener('click', () => {
-    fetch('./Checkout.php', {
-      method: "POST",
-      headers: {
-        'Content-Type' : 'application/json',
-      },
-      body: JSON.stringify({})
-    }).then(res => res.json())
-    .then(payload => {
-      stripe.redirectToCheckout({sessionId: payload.id})
-    })
+    const stripe = Stripe("pk_test_51N4SejBJNq2qisEJuTQKGgW2aCH3k9hb9VBbjovkVoy9wLpSastgbLjUbl2OYWUgymyr7vKa7g8MXzzjYC4nDUVK001HcZwohs");
+    const btn = document.querySelector('#stripe-btn');
+  
+    if (btn) {//check if btn exists
+    btn.addEventListener('click', () => {
+      fetch('./Checkout.php', {
+    method: "POST",
+    headers: {
+      'Content-Type' : 'application/json',
+    },
+    body: JSON.stringify({})
+  }).then(res => {
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    } else {
+      return res.json();
+    }
   })
-}
+  .then(payload => {
+    if (payload.error) {
+      console.error('Error in PHP script:', payload.error);
+    } else {
+      stripe.redirectToCheckout({sessionId: payload.id});
+    }
+  })
+  .catch(e => console.log('There has been a problem with your fetch operation: ' + e.message));
+  
+    })
   }
+    }
 
 });
