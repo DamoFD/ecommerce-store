@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (btn) {//check if btn exists
   btn.addEventListener('click', () => {
-    fetch('./database/Checkout.php', {
+    fetch('./Checkout.php', {
       method: "POST",
       headers: {
         'Content-Type' : 'application/json',

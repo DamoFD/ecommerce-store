@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 
-require ('../functions.php');
+require ('./functions.php');
 
     $cartData = $Cart->getCartData($currentUser['user_id']);
 
@@ -25,8 +25,8 @@ require ('../functions.php');
     }
 
     // Stripe Payments
-    require '../vendor/autoload.php';
-    require_once '../config/stripe_config.php';
+    require './vendor/autoload.php';
+    require_once './config/stripe_config.php';
     header('Content-Type: application/json');
 
     $stripe = new Stripe\StripeClient(STRIPE_SECRET_KEY);
